@@ -9,7 +9,7 @@ export default function Blog() {
     const imageContainer = element?.querySelector('.relative.w-full') as HTMLElement;
     const borderElement = imageContainer?.querySelector('.absolute.inset-0.border-2') as HTMLElement;
     const captionElement = imageContainer?.querySelector('.absolute.bottom-0') as HTMLElement;
-    const textContainer = element?.querySelector('.w-full.md\\:w-1\\/2:last-child') as HTMLElement;
+    const textContainer = element?.querySelector('.w-full.md\\:w-2\\/5') as HTMLElement;
     
     if (element && imageElement && imageContainer) {
       // Store original styles
@@ -42,7 +42,7 @@ export default function Blog() {
       imageElement.style.maxHeight = 'none';
       imageElement.style.objectFit = 'cover';
       imageElement.style.width = '100%';
-      imageElement.style.transform = 'scale(1.05)';
+      imageElement.style.transform = 'scale(1.1)';
       if (borderElement) {
         borderElement.style.display = 'none';
       }
@@ -130,30 +130,10 @@ export default function Blog() {
         >
           <div id="blog-post" className="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-3xl">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 }}
-              className="w-full md:w-1/2"
-            >
-              <div className="relative w-full rounded-3xl group cursor-pointer">
-                <div className="absolute inset-0 border-2 border-navy-500/50 rounded-3xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
-                <img
-                  src="/assets/img/IMG_1065.jpg"
-                  alt="Essaouira"
-                  className="relative w-full h-64 md:h-80 object-cover rounded-3xl transition-all duration-500 ease-out group-hover:h-auto group-hover:scale-105"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-900/80 to-transparent p-6 rounded-b-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">
-                  <p className="text-white font-semibold text-lg">Essaouira, Morocco • 2026</p>
-                  <p className="text-cream-200 text-sm">A coastal city of creativity</p>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="w-full md:w-1/2"
+              transition={{ delay: 0.3 }}
+              className="w-full md:w-2/5"
             >
               <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira, Morocco.</h2>
               <p className="text-navy-700 text-lg leading-relaxed mb-4">
@@ -165,6 +145,26 @@ export default function Blog() {
               <p className="text-navy-700 text-lg leading-relaxed">
                 The mix of old traditions and modern vibes there gave me some new ideas that I still think about when I'm coding.
               </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4 }}
+              className="w-full md:w-3/5"
+            >
+              <div className="relative w-full rounded-3xl overflow-hidden group cursor-pointer aspect-[9/16]">
+                <div className="absolute inset-0 border-2 border-navy-500/50 rounded-3xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
+                <img
+                  src="/assets/img/IMG_1065.jpg"
+                  alt="Essaouira"
+                  className="relative w-full h-full object-cover rounded-3xl transition-transform duration-300 ease-out group-hover:scale-110"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-900/80 to-transparent p-6 rounded-b-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">
+                  <p className="text-white font-semibold text-lg">Essaouira, Morocco • 2026</p>
+                  <p className="text-cream-200 text-sm">A coastal city of creativity</p>
+                </div>
+              </div>
             </motion.div>
           </div>
           
