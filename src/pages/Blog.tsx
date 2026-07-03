@@ -7,6 +7,7 @@ export default function Blog() {
   const capturePost = async () => {
     const element = document.getElementById('blog-post');
     const imageElement = element?.querySelector('img');
+    const captionElement = element?.querySelector('.absolute.bottom-0') as HTMLElement;
     
     if (element && imageElement) {
       // Store original styles
@@ -15,14 +16,18 @@ export default function Blog() {
       const originalFlexDirection = element.style.flexDirection;
       const originalWidth = element.style.width;
       const originalPadding = element.style.padding;
+      const originalCaptionOpacity = captionElement?.style.opacity;
       
-      // Force desktop-style layout
+      // Force desktop-style layout and show caption
       element.style.flexDirection = 'row';
       element.style.width = '100%';
       element.style.padding = '32px';
       imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
       imageElement.style.width = '50%';
+      if (captionElement) {
+        captionElement.style.opacity = '1';
+      }
       
       // Wait for DOM to update
       await new Promise(resolve => setTimeout(resolve, 100));
@@ -40,6 +45,9 @@ export default function Blog() {
       element.style.flexDirection = originalFlexDirection;
       element.style.width = originalWidth;
       element.style.padding = originalPadding;
+      if (captionElement) {
+        captionElement.style.opacity = originalCaptionOpacity || '';
+      }
       
       return canvas;
     }
