@@ -4,9 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Projects', path: '/projects' },
+  { name: 'About', path: '/' },
+  { name: 'Works', path: '/projects' },
   { name: 'Skills', path: '/skills' },
+  { name: 'Blog', path: '/blog' },
   { name: 'Contact', path: '/contact' },
 ];
 

@@ -5,6 +5,7 @@ import Background3D from './components/Background3D';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
+import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/skills" element={<Skills />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
