@@ -1,25 +1,34 @@
 import { motion } from 'framer-motion';
-import { Download, Share2 } from 'lucide-react';
 import html2canvas from 'html2canvas';
 
 export default function Blog() {
 
   const capturePost = async () => {
-    const imageContainer = document.querySelector('.relative.w-full.overflow-hidden') as HTMLElement;
-    const imageElement = imageContainer?.querySelector('img');
+    const element = document.getElementById('blog-post');
+    const imageElement = element?.querySelector('img');
+    const imageContainer = element?.querySelector('.relative.w-full') as HTMLElement;
     const borderElement = imageContainer?.querySelector('.absolute.inset-0.border-2') as HTMLElement;
     const captionElement = imageContainer?.querySelector('.absolute.bottom-0') as HTMLElement;
     
-    if (imageContainer && imageElement) {
+    if (element && imageElement && imageContainer) {
       // Store original styles
       const originalHeight = imageElement.style.height;
       const originalMaxHeight = imageElement.style.maxHeight;
+      const originalFlexDirection = element.style.flexDirection;
+      const originalWidth = element.style.width;
+      const originalPadding = element.style.padding;
+      const originalImageContainerWidth = imageContainer.style.width;
       const originalBorderDisplay = borderElement?.style.display;
       const originalCaptionOpacity = captionElement?.style.opacity;
       
-      // Expand image, show caption, hide border
+      // Force horizontal layout, expand image, show caption, hide border
+      element.style.flexDirection = 'row';
+      element.style.width = '100%';
+      element.style.padding = '32px';
+      imageContainer.style.width = '50%';
       imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
+      imageElement.style.width = '100%';
       if (borderElement) {
         borderElement.style.display = 'none';
       }
@@ -28,9 +37,9 @@ export default function Blog() {
       }
       
       // Wait for DOM to update
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise(resolve => setTimeout(resolve, 300));
       
-      const canvas = await html2canvas(imageContainer, {
+      const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
         backgroundColor: '#ffffff'
@@ -39,6 +48,11 @@ export default function Blog() {
       // Restore original styles
       imageElement.style.height = originalHeight;
       imageElement.style.maxHeight = originalMaxHeight;
+      imageElement.style.width = '';
+      imageContainer.style.width = originalImageContainerWidth || '';
+      element.style.flexDirection = originalFlexDirection;
+      element.style.width = originalWidth;
+      element.style.padding = originalPadding;
       if (borderElement) {
         borderElement.style.display = originalBorderDisplay || '';
       }
@@ -58,30 +72,6 @@ export default function Blog() {
       link.download = 'essaouira-post.png';
       link.href = canvas.toDataURL();
       link.click();
-    }
-  };
-
-  const handleShare = async () => {
-    const canvas = await capturePost();
-    if (canvas) {
-      canvas.toBlob(async (blob) => {
-        if (blob) {
-          const file = new File([blob], 'essaouira-post.png', { type: 'image/png' });
-          if (navigator.share && navigator.canShare({ files: [file] })) {
-            try {
-              await navigator.share({
-                files: [file],
-                title: 'Essaouira, Morocco',
-                text: 'A coastal city of creativity'
-              });
-            } catch (err) {
-              console.error('Error sharing:', err);
-            }
-          } else {
-            handleDownload();
-          }
-        }
-      });
     }
   };
 
@@ -111,7 +101,7 @@ export default function Blog() {
               transition={{ delay: 0.3 }}
               className="w-full md:w-1/2"
             >
-              <div className="relative w-full overflow-hidden rounded-3xl group cursor-pointer">
+              <div className="relative w-full rounded-3xl group cursor-pointer">
                 <div className="absolute inset-0 border-2 border-navy-500/50 rounded-3xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
                 <img
                   src="/assets/img/IMG_1065.jpg"
@@ -144,21 +134,9 @@ export default function Blog() {
             </motion.div>
           </div>
           
-          <div className="flex gap-4 mt-6 justify-center">
-            <button
-              onClick={handleDownload}
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              <Download size={18} />
-              Download as Image
-            </button>
-            <button
-              onClick={handleShare}
-              className="btn-secondary inline-flex items-center gap-2"
-            >
-              <Share2 size={18} />
-              Share
-            </button>
+          <div className="mt-6 text-center cursor-pointer hover:opacity-80 transition-opacity" onClick={handleDownload}>
+            <p className="text-navy-900 font-semibold text-lg">Essaouira, Morocco • 2026</p>
+            <p className="text-navy-600 text-sm">A coastal city of creativity</p>
           </div>
         </motion.div>
       </div>
