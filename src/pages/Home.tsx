@@ -119,7 +119,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-navy-900 mb-2 tracking-tight">Current Focus</h3>
                   <p className="text-navy-700 leading-relaxed">
-                    I'm currently deepening my knowledge of <strong className="text-navy-900">React</strong>, <strong className="text-navy-900">TypeScript</strong>, <strong className="text-navy-900">Node.js</strong>, <strong className="text-navy-900">Express</strong>, <strong className="text-navy-900">Python</strong>, and databases while exploring software architecture, performance optimization, and AI-powered development tools. My goal is to become a well-rounded full-stack engineer capable of building scalable and impactful applications.
+                    I'm currently deepening my knowledge of <strong className="text-navy-900">React</strong>, <strong className="text-navy-900">TypeScript</strong>, <strong className="text-navy-900">Node.js</strong>, <strong className="text-navy-900">Express</strong>, and databases while exploring software architecture, performance optimization, and AI-powered development tools. My goal is to become a well-rounded full-stack engineer capable of building scalable and impactful applications.
                   </p>
                 </div>
                 <div>
