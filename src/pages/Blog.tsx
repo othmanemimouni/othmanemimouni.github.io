@@ -9,7 +9,7 @@ export default function Blog() {
     const imageContainer = element?.querySelector('.relative.w-full') as HTMLElement;
     const borderElement = imageContainer?.querySelector('.absolute.inset-0.border-2') as HTMLElement;
     const captionElement = imageContainer?.querySelector('.absolute.bottom-0') as HTMLElement;
-    const textContainer = element?.querySelector('.w-full.md\\:w-2\\/5') as HTMLElement;
+    const textContainer = element?.querySelector('.w-full.md\\:w-2\\/5:last-child') as HTMLElement;
     
     if (element && imageElement && imageContainer) {
       // Store original styles
@@ -130,27 +130,9 @@ export default function Blog() {
         >
           <div id="blog-post" className="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-3xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="w-full md:w-2/5"
-            >
-              <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira, Morocco.</h2>
-              <p className="text-navy-700 text-lg leading-relaxed mb-4">
-                This year, I visited and the beaches there are really clean and the medina has these amazing colors everywhere. It's a pretty special place.
-              </p>
-              <p className="text-navy-700 text-lg leading-relaxed mb-4">
-                Walking around the streets, I got inspired by the local artisans and their work. Seeing the Atlantic ocean meet the sky was something else. Essaouira showed me that creativity is about how you see things, not just what you make.
-              </p>
-              <p className="text-navy-700 text-lg leading-relaxed">
-                The mix of old traditions and modern vibes there gave me some new ideas that I still think about when I'm coding.
-              </p>
-            </motion.div>
-            
-            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.3 }}
               className="w-full md:w-3/5"
             >
               <div className="relative w-full rounded-3xl overflow-hidden group cursor-pointer aspect-[9/16]">
@@ -165,6 +147,24 @@ export default function Blog() {
                   <p className="text-cream-200 text-sm">A coastal city of creativity</p>
                 </div>
               </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="w-full md:w-2/5"
+            >
+              <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira, Morocco.</h2>
+              <p className="text-navy-700 text-lg leading-relaxed mb-4">
+                This year, I visited and the beaches there are really clean and the medina has these amazing colors everywhere. It's a pretty special place.
+              </p>
+              <p className="text-navy-700 text-lg leading-relaxed mb-4">
+                Walking around the streets, I got inspired by the local artisans and their work. Seeing the Atlantic ocean meet the sky was something else. Essaouira showed me that creativity is about how you see things, not just what you make.
+              </p>
+              <p className="text-navy-700 text-lg leading-relaxed">
+                The mix of old traditions and modern vibes there gave me some new ideas that I still think about when I'm coding.
+              </p>
             </motion.div>
           </div>
           
