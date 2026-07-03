@@ -22,7 +22,7 @@ export default function Blog() {
       const originalBorderDisplay = borderElement?.style.display;
       const originalCaptionOpacity = captionElement?.style.opacity;
       
-      // Force horizontal layout, expand image, hide border and caption
+      // Force horizontal layout, expand image to full height, hide border and caption
       element.style.flexDirection = 'row';
       element.style.width = '100%';
       element.style.padding = '32px';
@@ -30,6 +30,7 @@ export default function Blog() {
       imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
       imageElement.style.width = '100%';
+      imageElement.style.objectFit = 'contain';
       if (borderElement) {
         borderElement.style.display = 'none';
       }
@@ -38,7 +39,7 @@ export default function Blog() {
       }
       
       // Wait for DOM to update
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise(resolve => setTimeout(resolve, 200));
       
       const canvas = await html2canvas(element, {
         scale: 2,
@@ -50,6 +51,7 @@ export default function Blog() {
       imageElement.style.height = originalHeight;
       imageElement.style.maxHeight = originalMaxHeight;
       imageElement.style.width = '';
+      imageElement.style.objectFit = '';
       imageContainer.style.width = originalImageContainerWidth || '';
       element.style.flexDirection = originalFlexDirection;
       element.style.width = originalWidth;
