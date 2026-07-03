@@ -9,6 +9,7 @@ export default function Blog() {
     const imageContainer = element?.querySelector('.relative.w-full') as HTMLElement;
     const borderElement = imageContainer?.querySelector('.absolute.inset-0.border-2') as HTMLElement;
     const captionElement = imageContainer?.querySelector('.absolute.bottom-0') as HTMLElement;
+    const textContainer = element?.querySelector('.w-full.md\\:w-1\\/2:last-child') as HTMLElement;
     
     if (element && imageElement && imageContainer) {
       // Store original styles
@@ -20,20 +21,32 @@ export default function Blog() {
       const originalImageContainerWidth = imageContainer.style.width;
       const originalBorderDisplay = borderElement?.style.display;
       const originalCaptionOpacity = captionElement?.style.opacity;
+      const originalImageTransform = imageElement.style.transform;
+      const originalTextContainerWidth = textContainer?.style.width;
+      const originalTextContainerDisplay = textContainer?.style.display;
+      const originalTextContainerAlignItems = textContainer?.style.alignItems;
+      const originalTextContainerJustifyContent = textContainer?.style.justifyContent;
       
       // Force horizontal layout, expand image, show caption, hide border
       element.style.flexDirection = 'row';
       element.style.width = '100%';
       element.style.padding = '32px';
-      imageContainer.style.width = '50%';
+      imageContainer.style.width = '60%';
       imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
       imageElement.style.width = '100%';
+      imageElement.style.transform = 'scale(1.05)';
       if (borderElement) {
         borderElement.style.display = 'none';
       }
       if (captionElement) {
         captionElement.style.opacity = '1';
+      }
+      if (textContainer) {
+        textContainer.style.width = '40%';
+        textContainer.style.display = 'flex';
+        textContainer.style.alignItems = 'center';
+        textContainer.style.justifyContent = 'center';
       }
       
       // Wait for DOM to update
@@ -49,6 +62,7 @@ export default function Blog() {
       imageElement.style.height = originalHeight;
       imageElement.style.maxHeight = originalMaxHeight;
       imageElement.style.width = '';
+      imageElement.style.transform = originalImageTransform || '';
       imageContainer.style.width = originalImageContainerWidth || '';
       element.style.flexDirection = originalFlexDirection;
       element.style.width = originalWidth;
@@ -58,6 +72,12 @@ export default function Blog() {
       }
       if (captionElement) {
         captionElement.style.opacity = originalCaptionOpacity || '';
+      }
+      if (textContainer) {
+        textContainer.style.width = originalTextContainerWidth || '';
+        textContainer.style.display = originalTextContainerDisplay || '';
+        textContainer.style.alignItems = originalTextContainerAlignItems || '';
+        textContainer.style.justifyContent = originalTextContainerJustifyContent || '';
       }
       
       return canvas;
