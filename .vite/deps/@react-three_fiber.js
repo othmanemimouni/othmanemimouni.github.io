@@ -29,10 +29,10 @@ import {
   useLoader,
   useStore,
   useThree
-} from "./chunk-BNL5DEQ6.js";
+} from "./chunk-CPZNXJQA.js";
+import "./chunk-MMHWJNRC.js";
 import "./chunk-RZSASJON.js";
 import "./chunk-TWJRYSII.js";
-import "./chunk-MMHWJNRC.js";
 import "./chunk-DC5AMYBS.js";
 export {
   Canvas,

@@ -18,11 +18,7 @@ import {
   useFrame,
   useLoader,
   useThree
-} from "./chunk-BNL5DEQ6.js";
-import "./chunk-RZSASJON.js";
-import {
-  require_react
-} from "./chunk-TWJRYSII.js";
+} from "./chunk-CPZNXJQA.js";
 import {
   AddEquation,
   AdditiveBlending,
@@ -218,6 +214,10 @@ import {
   ZeroFactor,
   three_module_exports
 } from "./chunk-MMHWJNRC.js";
+import "./chunk-RZSASJON.js";
+import {
+  require_react
+} from "./chunk-TWJRYSII.js";
 import {
   __commonJS,
   __export,

@@ -1,6 +1,52 @@
 import { motion } from 'framer-motion';
+import { Download, Share2 } from 'lucide-react';
+import html2canvas from 'html2canvas';
 
 export default function Blog() {
+
+  const handleDownload = async () => {
+    const element = document.getElementById('blog-post');
+    if (element) {
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ffffff'
+      });
+      const link = document.createElement('a');
+      link.download = 'essaouira-post.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+  };
+
+  const handleShare = async () => {
+    const element = document.getElementById('blog-post');
+    if (element) {
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ffffff'
+      });
+      canvas.toBlob(async (blob) => {
+        if (blob) {
+          const file = new File([blob], 'essaouira-post.png', { type: 'image/png' });
+          if (navigator.share && navigator.canShare({ files: [file] })) {
+            try {
+              await navigator.share({
+                files: [file],
+                title: 'Essaouira, Morocco',
+                text: 'A coastal city of creativity'
+              });
+            } catch (err) {
+              console.error('Error sharing:', err);
+            }
+          } else {
+            handleDownload();
+          }
+        }
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen pt-20 pb-20 px-4 sm:px-6 lg:px-8">
@@ -21,7 +67,7 @@ export default function Blog() {
           transition={{ delay: 0.2 }}
           className="glass-card p-8 md:p-12"
         >
-          <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div id="blog-post" className="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-3xl">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -59,6 +105,23 @@ export default function Blog() {
                 The mix of old traditions and modern vibes there gave me some new ideas that I still think about when I'm coding.
               </p>
             </motion.div>
+          </div>
+          
+          <div className="flex gap-4 mt-6 justify-center">
+            <button
+              onClick={handleDownload}
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              <Download size={18} />
+              Download as Image
+            </button>
+            <button
+              onClick={handleShare}
+              className="btn-secondary inline-flex items-center gap-2"
+            >
+              <Share2 size={18} />
+              Share
+            </button>
           </div>
         </motion.div>
       </div>
