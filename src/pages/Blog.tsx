@@ -9,6 +9,7 @@ export default function Blog() {
     const imageElement = element?.querySelector('img');
     const captionElement = element?.querySelector('.absolute.bottom-0') as HTMLElement;
     const imageContainer = element?.querySelector('.relative.w-full.overflow-hidden') as HTMLElement;
+    const borderElement = element?.querySelector('.absolute.inset-0.border-2') as HTMLElement;
     
     if (element && imageElement && imageContainer) {
       // Store original styles
@@ -19,8 +20,9 @@ export default function Blog() {
       const originalPadding = element.style.padding;
       const originalCaptionOpacity = captionElement?.style.opacity;
       const originalImageContainerWidth = imageContainer.style.width;
+      const originalBorderDisplay = borderElement?.style.display;
       
-      // Force desktop-style layout and show caption
+      // Force desktop-style layout, show caption, hide border
       element.style.flexDirection = 'row';
       element.style.width = '100%';
       element.style.padding = '32px';
@@ -30,6 +32,9 @@ export default function Blog() {
       imageElement.style.width = '100%';
       if (captionElement) {
         captionElement.style.opacity = '1';
+      }
+      if (borderElement) {
+        borderElement.style.display = 'none';
       }
       
       // Wait for DOM to update
@@ -51,6 +56,9 @@ export default function Blog() {
       element.style.padding = originalPadding;
       if (captionElement) {
         captionElement.style.opacity = originalCaptionOpacity || '';
+      }
+      if (borderElement) {
+        borderElement.style.display = originalBorderDisplay || '';
       }
       
       return canvas;
