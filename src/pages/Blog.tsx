@@ -9,9 +9,13 @@ export default function Blog() {
     const imageElement = element?.querySelector('img');
     
     if (element && imageElement) {
-      // Temporarily expand the image to full height
+      // Store original styles
       const originalHeight = imageElement.style.height;
       const originalMaxHeight = imageElement.style.maxHeight;
+      const originalFlexDirection = element.style.flexDirection;
+      
+      // Force horizontal layout and expand image
+      element.style.flexDirection = 'row';
       imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
       
@@ -24,9 +28,10 @@ export default function Blog() {
         backgroundColor: '#ffffff'
       });
       
-      // Restore original height
+      // Restore original styles
       imageElement.style.height = originalHeight;
       imageElement.style.maxHeight = originalMaxHeight;
+      element.style.flexDirection = originalFlexDirection;
       
       return canvas;
     }
