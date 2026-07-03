@@ -44,7 +44,7 @@ export default function Blog() {
               transition={{ delay: 0.4 }}
               className="w-full md:w-1/2"
             >
-              <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira: A Journey of Creativity</h2>
+              <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira</h2>
               <p className="text-navy-700 text-lg leading-relaxed mb-4">
                 This year, I visited Essaouira, a coastal city in Morocco. The beaches there are really clean and the medina has these amazing colors everywhere. It's a pretty special place.
               </p>
