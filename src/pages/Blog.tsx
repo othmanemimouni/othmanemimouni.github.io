@@ -29,11 +29,11 @@ export default function Blog() {
               className="w-full md:w-1/2"
             >
               <div className="relative w-full overflow-hidden rounded-3xl group cursor-pointer">
-                <div className="absolute inset-0 border-2 border-navy-500/50 rounded-3xl transform rotate-2 opacity-50 transition-transform duration-300 group-hover:rotate-0" />
+                <div className="absolute inset-0 border-2 border-navy-500/50 rounded-3xl transform rotate-2 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
                 <img
                   src="/assets/img/IMG_1065.jpg"
                   alt="Essaouira"
-                  className="relative w-full h-64 md:h-80 object-cover rounded-3xl transition-all duration-300 group-hover:h-auto group-hover:scale-105"
+                  className="relative w-full h-64 md:h-80 object-cover rounded-3xl transition-all duration-500 ease-out group-hover:h-auto group-hover:scale-105"
                 />
               </div>
             </motion.div>
