@@ -13,11 +13,16 @@ export default function Blog() {
       const originalHeight = imageElement.style.height;
       const originalMaxHeight = imageElement.style.maxHeight;
       const originalFlexDirection = element.style.flexDirection;
+      const originalWidth = element.style.width;
+      const originalPadding = element.style.padding;
       
-      // Force horizontal layout and expand image
+      // Force desktop-style layout
       element.style.flexDirection = 'row';
+      element.style.width = '100%';
+      element.style.padding = '32px';
       imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
+      imageElement.style.width = '50%';
       
       // Wait for DOM to update
       await new Promise(resolve => setTimeout(resolve, 100));
@@ -31,7 +36,10 @@ export default function Blog() {
       // Restore original styles
       imageElement.style.height = originalHeight;
       imageElement.style.maxHeight = originalMaxHeight;
+      imageElement.style.width = '';
       element.style.flexDirection = originalFlexDirection;
+      element.style.width = originalWidth;
+      element.style.padding = originalPadding;
       
       return canvas;
     }
