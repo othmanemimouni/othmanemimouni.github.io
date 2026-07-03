@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router basename="/othmanemimouni.github.io">
+    <Router>
       <Background3D />
       <Navigation />
       <Routes>
