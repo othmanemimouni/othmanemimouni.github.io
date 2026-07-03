@@ -7,6 +7,9 @@ export default defineConfig({
     port: 3000,
     host: true
   },
+  esbuild: {
+    jsxImportSource: undefined
+  },
   build: {
     outDir: 'dist',
     sourcemap: false
