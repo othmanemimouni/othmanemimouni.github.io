@@ -22,7 +22,7 @@ export default function Blog() {
       const originalBorderDisplay = borderElement?.style.display;
       const originalCaptionOpacity = captionElement?.style.opacity;
       
-      // Force horizontal layout, expand image, show caption, hide border
+      // Force horizontal layout, expand image, hide border and caption
       element.style.flexDirection = 'row';
       element.style.width = '100%';
       element.style.padding = '32px';
@@ -34,7 +34,7 @@ export default function Blog() {
         borderElement.style.display = 'none';
       }
       if (captionElement) {
-        captionElement.style.opacity = '1';
+        captionElement.style.opacity = '0';
       }
       
       // Wait for DOM to update
