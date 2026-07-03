@@ -62,6 +62,8 @@ export default function Blog() {
       
       const canvas = await html2canvas(element, {
         scale: 2,
+        width: element.offsetWidth,
+        windowWidth: element.scrollWidth,
         useCORS: true,
         backgroundColor: '#ffffff'
       });
