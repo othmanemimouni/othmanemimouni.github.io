@@ -8,8 +8,9 @@ export default function Blog() {
     const element = document.getElementById('blog-post');
     const imageElement = element?.querySelector('img');
     const captionElement = element?.querySelector('.absolute.bottom-0') as HTMLElement;
+    const imageContainer = element?.querySelector('.relative.w-full.overflow-hidden') as HTMLElement;
     
-    if (element && imageElement) {
+    if (element && imageElement && imageContainer) {
       // Store original styles
       const originalHeight = imageElement.style.height;
       const originalMaxHeight = imageElement.style.maxHeight;
@@ -17,14 +18,16 @@ export default function Blog() {
       const originalWidth = element.style.width;
       const originalPadding = element.style.padding;
       const originalCaptionOpacity = captionElement?.style.opacity;
+      const originalImageContainerWidth = imageContainer.style.width;
       
       // Force desktop-style layout and show caption
       element.style.flexDirection = 'row';
       element.style.width = '100%';
       element.style.padding = '32px';
+      imageContainer.style.width = '50%';
       imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
-      imageElement.style.width = '50%';
+      imageElement.style.width = '100%';
       if (captionElement) {
         captionElement.style.opacity = '1';
       }
@@ -42,6 +45,7 @@ export default function Blog() {
       imageElement.style.height = originalHeight;
       imageElement.style.maxHeight = originalMaxHeight;
       imageElement.style.width = '';
+      imageContainer.style.width = originalImageContainerWidth || '';
       element.style.flexDirection = originalFlexDirection;
       element.style.width = originalWidth;
       element.style.padding = originalPadding;
