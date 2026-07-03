@@ -12,7 +12,7 @@ export default function Blog() {
         >
           <h1 className="section-title">Blog</h1>
           <div className="section-line" />
-          <p className="text-navy-600 mt-4 text-lg tracking-wide">Thoughts, tutorials, and insights from my journey</p>
+          <p className="text-navy-600 mt-4 text-lg tracking-wide">Life, code, and everything in between</p>
         </motion.div>
 
         <motion.div
