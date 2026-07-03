@@ -9,9 +9,14 @@ export default function Blog() {
     const imageElement = element?.querySelector('img');
     
     if (element && imageElement) {
-      // Temporarily expand the image
+      // Temporarily expand the image to full height
       const originalHeight = imageElement.style.height;
+      const originalMaxHeight = imageElement.style.maxHeight;
       imageElement.style.height = 'auto';
+      imageElement.style.maxHeight = 'none';
+      
+      // Wait for DOM to update
+      await new Promise(resolve => setTimeout(resolve, 100));
       
       const canvas = await html2canvas(element, {
         scale: 2,
@@ -21,6 +26,7 @@ export default function Blog() {
       
       // Restore original height
       imageElement.style.height = originalHeight;
+      imageElement.style.maxHeight = originalMaxHeight;
       
       return canvas;
     }
