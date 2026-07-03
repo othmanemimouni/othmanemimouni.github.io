@@ -36,7 +36,7 @@ export default function Blog() {
                   className="relative w-full h-64 md:h-80 object-cover rounded-3xl transition-all duration-500 ease-out group-hover:h-auto group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-900/80 to-transparent p-6 rounded-b-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">
-                  <p className="text-white font-semibold text-lg">Essaouira, Morocco</p>
+                  <p className="text-white font-semibold text-lg">Essaouira, Morocco • 2026</p>
                   <p className="text-cream-200 text-sm">A coastal city of creativity</p>
                 </div>
               </div>
@@ -50,7 +50,7 @@ export default function Blog() {
             >
               <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira</h2>
               <p className="text-navy-700 text-lg leading-relaxed mb-4">
-                This year, I visited Essaouira, a coastal city in Morocco. The beaches there are really clean and the medina has these amazing colors everywhere. It's a pretty special place.
+                Essaouira, a coastal city in Morocco. This year, I visited and the beaches there are really clean and the medina has these amazing colors everywhere. It's a pretty special place.
               </p>
               <p className="text-navy-700 text-lg leading-relaxed mb-4">
                 Walking around the streets, I got inspired by the local artisans and their work. Seeing the Atlantic ocean meet the sky was something else. Essaouira showed me that creativity is about how you see things, not just what you make.
