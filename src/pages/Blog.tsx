@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Download, Share2 } from 'lucide-react';
 import html2canvas from 'html2canvas';
 
 export default function Blog() {
@@ -64,6 +65,30 @@ export default function Blog() {
     }
   };
 
+  const handleShare = async () => {
+    const canvas = await capturePost();
+    if (canvas) {
+      canvas.toBlob(async (blob) => {
+        if (blob) {
+          const file = new File([blob], 'essaouira-post.png', { type: 'image/png' });
+          if (navigator.share && navigator.canShare({ files: [file] })) {
+            try {
+              await navigator.share({
+                files: [file],
+                title: 'Essaouira, Morocco',
+                text: 'A coastal city of creativity'
+              });
+            } catch (err) {
+              console.error('Error sharing:', err);
+            }
+          } else {
+            handleDownload();
+          }
+        }
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen pt-20 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -123,9 +148,21 @@ export default function Blog() {
             </motion.div>
           </div>
           
-          <div className="mt-6 text-center cursor-pointer hover:opacity-80 transition-opacity" onClick={handleDownload}>
-            <p className="text-navy-900 font-semibold text-lg">Essaouira, Morocco • 2026</p>
-            <p className="text-navy-600 text-sm">A coastal city of creativity</p>
+          <div className="flex gap-4 mt-6 justify-center">
+            <button
+              onClick={handleDownload}
+              className="mt-6 text-center cursor-pointer hover:opacity-80 transition-opacity inline-flex items-center gap-2"
+            >
+              <Download size={18} />
+              Download
+            </button>
+            <button
+              onClick={handleShare}
+              className="mt-6 text-center cursor-pointer hover:opacity-80 transition-opacity inline-flex items-center gap-2"
+            >
+              <Share2 size={18} />
+              Share
+            </button>
           </div>
         </motion.div>
       </div>
