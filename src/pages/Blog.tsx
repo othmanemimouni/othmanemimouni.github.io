@@ -15,9 +15,12 @@ export default function Blog() {
       // Store original styles
       const originalHeight = imageElement.style.height;
       const originalMaxHeight = imageElement.style.maxHeight;
+      const originalObjectFit = imageElement.style.objectFit;
       const originalFlexDirection = element.style.flexDirection;
       const originalWidth = element.style.width;
       const originalPadding = element.style.padding;
+      const originalElementHeight = element.style.height;
+      const originalGap = element.style.gap;
       const originalImageContainerWidth = imageContainer.style.width;
       const originalBorderDisplay = borderElement?.style.display;
       const originalCaptionOpacity = captionElement?.style.opacity;
@@ -26,14 +29,18 @@ export default function Blog() {
       const originalTextContainerDisplay = textContainer?.style.display;
       const originalTextContainerAlignItems = textContainer?.style.alignItems;
       const originalTextContainerJustifyContent = textContainer?.style.justifyContent;
+      const originalTextContainerFlexDirection = textContainer?.style.flexDirection;
       
-      // Force horizontal layout, expand image, show caption, hide border
+      // Force horizontal layout with fixed height, expand image, show caption, hide border
       element.style.flexDirection = 'row';
       element.style.width = '100%';
+      element.style.height = '600px';
       element.style.padding = '32px';
+      element.style.gap = '40px';
       imageContainer.style.width = '60%';
-      imageElement.style.height = 'auto';
+      imageElement.style.height = '100%';
       imageElement.style.maxHeight = 'none';
+      imageElement.style.objectFit = 'cover';
       imageElement.style.width = '100%';
       imageElement.style.transform = 'scale(1.05)';
       if (borderElement) {
@@ -45,6 +52,7 @@ export default function Blog() {
       if (textContainer) {
         textContainer.style.width = '40%';
         textContainer.style.display = 'flex';
+        textContainer.style.flexDirection = 'column';
         textContainer.style.alignItems = 'center';
         textContainer.style.justifyContent = 'center';
       }
@@ -61,12 +69,15 @@ export default function Blog() {
       // Restore original styles
       imageElement.style.height = originalHeight;
       imageElement.style.maxHeight = originalMaxHeight;
+      imageElement.style.objectFit = originalObjectFit || '';
       imageElement.style.width = '';
       imageElement.style.transform = originalImageTransform || '';
       imageContainer.style.width = originalImageContainerWidth || '';
       element.style.flexDirection = originalFlexDirection;
       element.style.width = originalWidth;
+      element.style.height = originalElementHeight || '';
       element.style.padding = originalPadding;
+      element.style.gap = originalGap || '';
       if (borderElement) {
         borderElement.style.display = originalBorderDisplay || '';
       }
@@ -76,6 +87,7 @@ export default function Blog() {
       if (textContainer) {
         textContainer.style.width = originalTextContainerWidth || '';
         textContainer.style.display = originalTextContainerDisplay || '';
+        textContainer.style.flexDirection = originalTextContainerFlexDirection || '';
         textContainer.style.alignItems = originalTextContainerAlignItems || '';
         textContainer.style.justifyContent = originalTextContainerJustifyContent || '';
       }
