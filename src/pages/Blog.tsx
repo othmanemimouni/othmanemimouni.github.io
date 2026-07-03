@@ -50,7 +50,7 @@ export default function Blog() {
             >
               <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira</h2>
               <p className="text-navy-700 text-lg leading-relaxed mb-4">
-                Essaouira, a coastal city in Morocco. This year, I visited and the beaches there are really clean and the medina has these amazing colors everywhere. It's a pretty special place.
+                Essaouira, Morocco. This year, I visited and the beaches there are really clean and the medina has these amazing colors everywhere. It's a pretty special place.
               </p>
               <p className="text-navy-700 text-lg leading-relaxed mb-4">
                 Walking around the streets, I got inspired by the local artisans and their work. Seeing the Atlantic ocean meet the sky was something else. Essaouira showed me that creativity is about how you see things, not just what you make.
