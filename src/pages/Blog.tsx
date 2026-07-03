@@ -9,61 +9,31 @@ export default function Blog() {
     const imageContainer = element?.querySelector('.relative.w-full') as HTMLElement;
     const borderElement = imageContainer?.querySelector('.absolute.inset-0.border-2') as HTMLElement;
     const captionElement = imageContainer?.querySelector('.absolute.bottom-0') as HTMLElement;
-    const textContainer = element?.querySelector('.w-full.md\\:w-2\\/5:last-child') as HTMLElement;
     
     if (element && imageElement && imageContainer) {
       // Store original styles
       const originalHeight = imageElement.style.height;
       const originalMaxHeight = imageElement.style.maxHeight;
-      const originalObjectFit = imageElement.style.objectFit;
       const originalFlexDirection = element.style.flexDirection;
-      const originalWidth = element.style.width;
-      const originalPadding = element.style.padding;
-      const originalElementHeight = element.style.height;
-      const originalGap = element.style.gap;
-      const originalImageContainerWidth = imageContainer.style.width;
       const originalBorderDisplay = borderElement?.style.display;
       const originalCaptionOpacity = captionElement?.style.opacity;
-      const originalImageTransform = imageElement.style.transform;
-      const originalTextContainerWidth = textContainer?.style.width;
-      const originalTextContainerDisplay = textContainer?.style.display;
-      const originalTextContainerAlignItems = textContainer?.style.alignItems;
-      const originalTextContainerJustifyContent = textContainer?.style.justifyContent;
-      const originalTextContainerFlexDirection = textContainer?.style.flexDirection;
       
-      // Force horizontal layout with fixed height, expand image, show caption, hide border
+      // Force horizontal layout, expand image, show caption, hide border
       element.style.flexDirection = 'row';
-      element.style.width = '100%';
-      element.style.height = '600px';
-      element.style.padding = '32px';
-      element.style.gap = '40px';
-      imageContainer.style.width = '60%';
-      imageElement.style.height = '100%';
+      imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
-      imageElement.style.objectFit = 'cover';
-      imageElement.style.width = '100%';
-      imageElement.style.transform = 'scale(1.1)';
       if (borderElement) {
         borderElement.style.display = 'none';
       }
       if (captionElement) {
         captionElement.style.opacity = '1';
       }
-      if (textContainer) {
-        textContainer.style.width = '40%';
-        textContainer.style.display = 'flex';
-        textContainer.style.flexDirection = 'column';
-        textContainer.style.alignItems = 'center';
-        textContainer.style.justifyContent = 'center';
-      }
       
       // Wait for DOM to update
-      await new Promise(resolve => setTimeout(resolve, 300));
+      await new Promise(resolve => setTimeout(resolve, 100));
       
       const canvas = await html2canvas(element, {
         scale: 2,
-        width: element.offsetWidth,
-        windowWidth: element.scrollWidth,
         useCORS: true,
         backgroundColor: '#ffffff'
       });
@@ -71,27 +41,12 @@ export default function Blog() {
       // Restore original styles
       imageElement.style.height = originalHeight;
       imageElement.style.maxHeight = originalMaxHeight;
-      imageElement.style.objectFit = originalObjectFit || '';
-      imageElement.style.width = '';
-      imageElement.style.transform = originalImageTransform || '';
-      imageContainer.style.width = originalImageContainerWidth || '';
       element.style.flexDirection = originalFlexDirection;
-      element.style.width = originalWidth;
-      element.style.height = originalElementHeight || '';
-      element.style.padding = originalPadding;
-      element.style.gap = originalGap || '';
       if (borderElement) {
         borderElement.style.display = originalBorderDisplay || '';
       }
       if (captionElement) {
         captionElement.style.opacity = originalCaptionOpacity || '';
-      }
-      if (textContainer) {
-        textContainer.style.width = originalTextContainerWidth || '';
-        textContainer.style.display = originalTextContainerDisplay || '';
-        textContainer.style.flexDirection = originalTextContainerFlexDirection || '';
-        textContainer.style.alignItems = originalTextContainerAlignItems || '';
-        textContainer.style.justifyContent = originalTextContainerJustifyContent || '';
       }
       
       return canvas;
@@ -133,14 +88,14 @@ export default function Blog() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
-              className="w-full md:w-3/5"
+              className="w-full md:w-1/2"
             >
-              <div className="relative w-full rounded-3xl overflow-hidden group cursor-pointer aspect-[9/16]">
+              <div className="relative w-full rounded-3xl group cursor-pointer">
                 <div className="absolute inset-0 border-2 border-navy-500/50 rounded-3xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
                 <img
                   src="/assets/img/IMG_1065.jpg"
                   alt="Essaouira"
-                  className="relative w-full h-full object-cover rounded-3xl transition-transform duration-300 ease-out group-hover:scale-110"
+                  className="relative w-full h-64 md:h-80 object-cover rounded-3xl transition-all duration-500 ease-out group-hover:h-auto group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-900/80 to-transparent p-6 rounded-b-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">
                   <p className="text-white font-semibold text-lg">Essaouira, Morocco • 2026</p>
@@ -153,7 +108,7 @@ export default function Blog() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="w-full md:w-2/5"
+              className="w-full md:w-1/2"
             >
               <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira, Morocco.</h2>
               <p className="text-navy-700 text-lg leading-relaxed mb-4">
