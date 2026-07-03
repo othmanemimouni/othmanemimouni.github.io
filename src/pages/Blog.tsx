@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { PenTool, Github } from 'lucide-react';
 
 export default function Blog() {
 
@@ -20,26 +19,40 @@ export default function Blog() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="glass-card p-12 text-center"
+          className="glass-card p-8 md:p-12"
         >
-          <div className="w-20 h-20 bg-gradient-to-br from-navy-500 to-navy-700 rounded-full flex items-center justify-center mx-auto mb-6">
-            <PenTool size={40} className="text-white" />
-          </div>
-          <h2 className="text-2xl font-semibold text-navy-900 mb-4 tracking-tight">Coming Soon</h2>
-          <p className="text-navy-700 text-lg max-w-2xl mx-auto leading-relaxed">
-            I'm working on writing some insightful articles about web development, 
-            programming concepts, and my learning experiences. 
-            Check back soon for tutorials, tips, and stories from my coding journey.
-          </p>
-          <div className="mt-8 flex justify-center gap-4">
-            <a href="https://github.com/othmanemimouni" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
-              <Github size={18} />
-              Follow on GitHub
-            </a>
-            <a href="/contact" className="btn-secondary">
-              Get In Touch
-            </a>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 }}
+            className="mb-8"
+          >
+            <img
+              src="/assets/img/IMG_1065.HEIC"
+              alt="Essaouira"
+              className="w-full h-64 md:h-96 object-cover rounded-2xl"
+            />
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira: A Journey of Creativity</h2>
+            <p className="text-navy-700 text-lg leading-relaxed mb-4">
+              This year, I had the incredible opportunity to visit Essaouira, a beautiful coastal city in Morocco. 
+              The experience was truly transformative - the clean beaches, the vibrant colors of the medina, 
+              and the creative energy that fills every corner of this magical place.
+            </p>
+            <p className="text-navy-700 text-lg leading-relaxed">
+              Walking through the winding streets, I found inspiration everywhere - from the intricate craftsmanship 
+              of local artisans to the endless horizon where the Atlantic meets the sky. Essaouira taught me that 
+              creativity isn't just about what we create, but about how we see the world around us. 
+              The city's unique blend of tradition and modernity sparked new ideas and perspectives that 
+              I carry with me in my work as a developer.
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </div>
