@@ -28,7 +28,7 @@ export default function Blog() {
             className="mb-8"
           >
             <img
-              src="/assets/img/IMG_1065.HEIC"
+              src="/assets/img/IMG_1065.jpg"
               alt="Essaouira"
               className="w-full h-64 md:h-96 object-cover rounded-2xl"
             />
