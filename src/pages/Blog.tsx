@@ -9,6 +9,7 @@ export default function Blog() {
     const imageElement = element?.querySelector('img');
     const imageContainer = element?.querySelector('.relative.w-full.overflow-hidden') as HTMLElement;
     const borderElement = element?.querySelector('.absolute.inset-0.border-2') as HTMLElement;
+    const captionElement = element?.querySelector('.absolute.bottom-0') as HTMLElement;
     
     if (element && imageElement && imageContainer) {
       // Store original styles
@@ -19,17 +20,21 @@ export default function Blog() {
       const originalPadding = element.style.padding;
       const originalImageContainerWidth = imageContainer.style.width;
       const originalBorderDisplay = borderElement?.style.display;
+      const originalCaptionOpacity = captionElement?.style.opacity;
       
-      // Force desktop-style layout, hide border
-      element.style.flexDirection = 'row';
+      // Force vertical Instagram-style layout, show caption, hide border
+      element.style.flexDirection = 'column';
       element.style.width = '100%';
       element.style.padding = '32px';
-      imageContainer.style.width = '50%';
+      imageContainer.style.width = '100%';
       imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
       imageElement.style.width = '100%';
       if (borderElement) {
         borderElement.style.display = 'none';
+      }
+      if (captionElement) {
+        captionElement.style.opacity = '1';
       }
       
       // Wait for DOM to update
@@ -51,6 +56,9 @@ export default function Blog() {
       element.style.padding = originalPadding;
       if (borderElement) {
         borderElement.style.display = originalBorderDisplay || '';
+      }
+      if (captionElement) {
+        captionElement.style.opacity = originalCaptionOpacity || '';
       }
       
       return canvas;
