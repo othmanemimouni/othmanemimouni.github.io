@@ -4,14 +4,32 @@ import html2canvas from 'html2canvas';
 
 export default function Blog() {
 
-  const handleDownload = async () => {
+  const capturePost = async () => {
     const element = document.getElementById('blog-post');
-    if (element) {
+    const imageElement = element?.querySelector('img');
+    
+    if (element && imageElement) {
+      // Temporarily expand the image
+      const originalHeight = imageElement.style.height;
+      imageElement.style.height = 'auto';
+      
       const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
         backgroundColor: '#ffffff'
       });
+      
+      // Restore original height
+      imageElement.style.height = originalHeight;
+      
+      return canvas;
+    }
+    return null;
+  };
+
+  const handleDownload = async () => {
+    const canvas = await capturePost();
+    if (canvas) {
       const link = document.createElement('a');
       link.download = 'essaouira-post.png';
       link.href = canvas.toDataURL();
@@ -20,13 +38,8 @@ export default function Blog() {
   };
 
   const handleShare = async () => {
-    const element = document.getElementById('blog-post');
-    if (element) {
-      const canvas = await html2canvas(element, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: '#ffffff'
-      });
+    const canvas = await capturePost();
+    if (canvas) {
       canvas.toBlob(async (blob) => {
         if (blob) {
           const file = new File([blob], 'essaouira-post.png', { type: 'image/png' });
