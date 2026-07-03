@@ -16,21 +16,21 @@ export default function Home() {
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-navy-600 font-medium text-lg tracking-wide">
                 Hi, I'm
               </motion.p>
-              
+
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
                 <span className="block">Othmane</span>
                 <span className="block text-navy-900">Mimouni</span>
               </motion.h1>
-              
+
               <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-2xl sm:text-3xl text-navy-600 font-medium h-10 tracking-wide">
                 {text}
                 <span className="animate-pulse">|</span>
               </motion.h2>
-              
+
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="text-navy-700 text-lg leading-relaxed max-w-xl tracking-wide">
                 I'm passionate about building modern, responsive web applications and continuously expanding my skills through hands-on projects, real-world experience, and lifelong learning.
               </motion.p>
-              
+
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="flex flex-wrap gap-4">
                 <Link to="/projects" className="btn-primary inline-flex items-center gap-2">
                   View My Work
@@ -40,7 +40,7 @@ export default function Home() {
                   Get In Touch
                 </Link>
               </motion.div>
-              
+
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="flex gap-4">
                 {[
                   { icon: Github, href: 'https://github.com/othmanemimouni' },
@@ -59,7 +59,7 @@ export default function Home() {
                 ))}
               </motion.div>
             </div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export default function Home() {
             <h2 className="section-title">About Me</h2>
             <div className="section-line" />
           </motion.div>
-          
+
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

@@ -90,7 +90,7 @@ export default function Contact() {
             <div>
               <h2 className="text-2xl font-semibold mb-2 text-navy-900 tracking-tight">Contact Information</h2>
               <p className="text-navy-700 leading-relaxed">
-                Feel free to reach out if you want to collaborate on a project, 
+                Feel free to reach out if you want to collaborate on a project,
                 have a question, or just want to say hi!
               </p>
             </div>
