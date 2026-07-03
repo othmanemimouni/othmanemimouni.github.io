@@ -5,21 +5,31 @@ import html2canvas from 'html2canvas';
 export default function Blog() {
 
   const capturePost = async () => {
-    const imageContainer = document.querySelector('.relative.w-full.overflow-hidden') as HTMLElement;
-    const imageElement = imageContainer?.querySelector('img');
+    const element = document.getElementById('blog-post');
+    const imageElement = element?.querySelector('img');
+    const imageContainer = element?.querySelector('.relative.w-full.overflow-hidden') as HTMLElement;
     const borderElement = imageContainer?.querySelector('.absolute.inset-0.border-2') as HTMLElement;
     const captionElement = imageContainer?.querySelector('.absolute.bottom-0') as HTMLElement;
     
-    if (imageContainer && imageElement) {
+    if (element && imageElement && imageContainer) {
       // Store original styles
       const originalHeight = imageElement.style.height;
       const originalMaxHeight = imageElement.style.maxHeight;
+      const originalFlexDirection = element.style.flexDirection;
+      const originalWidth = element.style.width;
+      const originalPadding = element.style.padding;
+      const originalImageContainerWidth = imageContainer.style.width;
       const originalBorderDisplay = borderElement?.style.display;
       const originalCaptionOpacity = captionElement?.style.opacity;
       
-      // Expand image, show caption, hide border
+      // Force horizontal layout, expand image, show caption, hide border
+      element.style.flexDirection = 'row';
+      element.style.width = '100%';
+      element.style.padding = '32px';
+      imageContainer.style.width = '50%';
       imageElement.style.height = 'auto';
       imageElement.style.maxHeight = 'none';
+      imageElement.style.width = '100%';
       if (borderElement) {
         borderElement.style.display = 'none';
       }
@@ -30,7 +40,7 @@ export default function Blog() {
       // Wait for DOM to update
       await new Promise(resolve => setTimeout(resolve, 100));
       
-      const canvas = await html2canvas(imageContainer, {
+      const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
         backgroundColor: '#ffffff'
@@ -39,6 +49,11 @@ export default function Blog() {
       // Restore original styles
       imageElement.style.height = originalHeight;
       imageElement.style.maxHeight = originalMaxHeight;
+      imageElement.style.width = '';
+      imageContainer.style.width = originalImageContainerWidth || '';
+      element.style.flexDirection = originalFlexDirection;
+      element.style.width = originalWidth;
+      element.style.padding = originalPadding;
       if (borderElement) {
         borderElement.style.display = originalBorderDisplay || '';
       }
