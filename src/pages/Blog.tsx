@@ -41,16 +41,13 @@ export default function Blog() {
           >
             <h2 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Essaouira: A Journey of Creativity</h2>
             <p className="text-navy-700 text-lg leading-relaxed mb-4">
-              This year, I had the incredible opportunity to visit Essaouira, a beautiful coastal city in Morocco. 
-              The experience was truly transformative - the clean beaches, the vibrant colors of the medina, 
-              and the creative energy that fills every corner of this magical place.
+              This year, I visited Essaouira, a coastal city in Morocco. The beaches there are really clean and the medina has these amazing colors everywhere. It's a pretty special place.
+            </p>
+            <p className="text-navy-700 text-lg leading-relaxed mb-4">
+              Walking around the streets, I got inspired by the local artisans and their work. Seeing the Atlantic ocean meet the sky was something else. Essaouira showed me that creativity is about how you see things, not just what you make.
             </p>
             <p className="text-navy-700 text-lg leading-relaxed">
-              Walking through the winding streets, I found inspiration everywhere - from the intricate craftsmanship 
-              of local artisans to the endless horizon where the Atlantic meets the sky. Essaouira taught me that 
-              creativity isn't just about what we create, but about how we see the world around us. 
-              The city's unique blend of tradition and modernity sparked new ideas and perspectives that 
-              I carry with me in my work as a developer.
+              The mix of old traditions and modern vibes there gave me some new ideas that I still think about when I'm coding.
             </p>
           </motion.div>
         </motion.div>
