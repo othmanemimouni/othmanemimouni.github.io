@@ -15,7 +15,7 @@ export default function Projects() {
         >
           <h1 className="section-title">Featured Projects</h1>
           <div className="section-line" />
-          <p className="text-navy-600 mt-4 text-lg tracking-wide">My work and creative projects</p>
+          <p className="text-navy-600 mt-4 text-lg tracking-wide">My projects and creative work</p>
         </motion.div>
 
         <div className="space-y-8">
