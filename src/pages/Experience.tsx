@@ -51,7 +51,14 @@ export default function Experience() {
               </div>
               
               <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Full Stack Developer</h2>
-              <h3 className="text-xl font-semibold text-orange-600 mb-4">alibbesttravaux.ma</h3>
+              <a 
+                href="https://alibest-travaux.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xl font-semibold text-orange-600 mb-4 hover:text-orange-800 transition-colors inline-block"
+              >
+                alibbesttravaux.ma
+              </a>
               
               <div className="space-y-4 mb-6">
                 <p className="text-gray-700 text-lg leading-relaxed">
