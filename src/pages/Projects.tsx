@@ -53,14 +53,7 @@ export default function Projects() {
                 </div>
                 
                 <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Full Stack Developer</h2>
-                <a 
-                  href="https://xerawork.vercel.app/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-xl font-semibold text-blue-600 mb-4 hover:text-blue-800 transition-colors inline-block"
-                >
-                  xerawork.ma
-                </a>
+                <h3 className="text-xl font-semibold text-blue-600 mb-4">xerawork.ma</h3>
                 
                 <div className="space-y-4 mb-6">
                   <p className="text-gray-700 text-lg leading-relaxed">
@@ -103,17 +96,14 @@ export default function Projects() {
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Multi-Language</span>
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Database Design</span>
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">IRCAM Partnership</span>
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">Work in Progress</span>
                 </div>
 
-                <a 
-                  href="https://xerawork.vercel.app/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium transition-colors"
-                >
-                  <ExternalLink size={16} />
-                  View Live Site
-                </a>
+                <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+                  <p className="text-yellow-800 font-medium">
+                    🚧 This project is currently under development. Check back soon for updates!
+                  </p>
+                </div>
               </motion.div>
             </div>
           </motion.div>
