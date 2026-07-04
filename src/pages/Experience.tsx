@@ -13,7 +13,7 @@ export default function Experience() {
         >
           <h1 className="section-title">Experience</h1>
           <div className="section-line" />
-          <p className="text-navy-600 mt-4 text-lg tracking-wide">My professional journey and work experience</p>
+          <p className="text-navy-600 mt-4 text-lg tracking-wide">My professional work experience</p>
         </motion.div>
 
         <motion.div
