@@ -7,7 +7,7 @@ function Particles() {
   const ref = useRef<THREE.Points>(null);
   
   const particles = useMemo(() => {
-    const count = 2000;
+    const count = window.innerWidth < 768 ? 500 : 2000; // Reduce particles on mobile
     const positions = new Float32Array(count * 3);
     
     for (let i = 0; i < count * 3; i++) {
@@ -63,7 +63,8 @@ function FloatingShape({ position, rotationSpeed, color }: { position: [number, 
 function Scene() {
   const shapes = useMemo(() => {
     const colors = ['#102C57', '#0D2345', '#DAC0A3'];
-    return Array.from({ length: 15 }, () => ({
+    const shapeCount = window.innerWidth < 768 ? 5 : 15; // Reduce shapes on mobile
+    return Array.from({ length: shapeCount }, () => ({
       position: [
         (Math.random() - 0.5) * 8,
         (Math.random() - 0.5) * 8,
