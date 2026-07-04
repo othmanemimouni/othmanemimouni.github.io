@@ -20,7 +20,7 @@ export default function Experience() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="glass-card p-8 md:p-12"
+          className="glass-card p-8 md:p-12 border-2 border-orange-500/20"
         >
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <motion.div
@@ -29,11 +29,12 @@ export default function Experience() {
               transition={{ delay: 0.3 }}
               className="w-full md:w-1/3"
             >
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-orange-500/20">
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-orange-500/30 group">
+                <div className="absolute inset-0 border-2 border-orange-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
                 <img
                   src="https://alibest-travaux.vercel.app/assets/Abtlogo-Cgk4YORS.png"
                   alt="alibbesttravaux.ma"
-                  className="w-full h-full object-contain p-8"
+                  className="relative w-full h-full object-contain p-8 z-10"
                 />
               </div>
             </motion.div>
