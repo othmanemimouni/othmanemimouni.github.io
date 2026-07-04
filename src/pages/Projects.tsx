@@ -26,7 +26,7 @@ export default function Projects() {
             transition={{ delay: 0.2 }}
             className="glass-card p-6 md:p-8 border-2 border-green-500/20"
           >
-            <div className="flex flex-col gap-6 items-center">
+            <div className="flex flex-col md:flex-row gap-8 items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -47,7 +47,7 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="w-full text-center"
+                className="w-full md:w-2/3 text-center md:text-left"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Calendar size={18} className="text-green-600" />
@@ -234,7 +234,7 @@ export default function Projects() {
             transition={{ delay: 0.5 }}
             className="glass-card p-6 md:p-8 border-2 border-orange-500/20"
           >
-            <div className="flex flex-col gap-6 items-center">
+            <div className="flex flex-col md:flex-row gap-8 items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -255,7 +255,7 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="w-full text-center"
+                className="w-full md:w-2/3 text-center md:text-left"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Calendar size={18} className="text-orange-600" />
