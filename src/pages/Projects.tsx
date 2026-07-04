@@ -26,12 +26,12 @@ export default function Projects() {
             transition={{ delay: 0.2 }}
             className="glass-card p-6 md:p-8 border-2 border-green-500/20"
           >
-            <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="flex flex-col gap-6 items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
-                className="w-full md:w-1/3"
+                className="w-full md:w-1/3 max-w-xs"
               >
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-green-500/30 group">
                   <div className="absolute -inset-2 border-2 border-green-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
@@ -47,7 +47,7 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="w-full md:w-2/3"
+                className="w-full text-center"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Calendar size={18} className="text-green-600" />
@@ -234,12 +234,12 @@ export default function Projects() {
             transition={{ delay: 0.5 }}
             className="glass-card p-6 md:p-8 border-2 border-orange-500/20"
           >
-            <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="flex flex-col gap-6 items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6 }}
-                className="w-full md:w-1/3"
+                className="w-full md:w-1/3 max-w-xs"
               >
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-orange-500/30 group">
                   <div className="absolute inset-0 border-2 border-orange-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
@@ -255,7 +255,7 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="w-full md:w-2/3"
+                className="w-full text-center"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Calendar size={18} className="text-orange-600" />
