@@ -19,3 +19,42 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
+
+.section-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #102C57, #442A08);
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+.btn-primary {
+  background-color: #102C57;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0D2345;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 44, 87, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #102C57;
+  padding: 12px 24px;
+  border: 2px solid #102C57;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #102C57;
+  color: white;
+  transform: translateY(-2px);
+}

@@ -114,7 +114,7 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="section-title">Featured Projects</h1>
+          <h1 className="section-title">Featured Works</h1>
           <div className="section-line" />
           <p className="text-navy-600 mt-4 text-lg tracking-wide">My creative work</p>
         </motion.div>
