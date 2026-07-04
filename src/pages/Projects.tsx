@@ -22,7 +22,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="glass-card p-8 md:p-12 border-2 border-blue-500/20"
+            className="glass-card p-8 md:p-12 border-2 border-green-500/20"
           >
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <motion.div
@@ -31,8 +31,8 @@ export default function Projects() {
                 transition={{ delay: 0.3 }}
                 className="w-full md:w-1/3"
               >
-                <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-blue-500/30 group">
-                  <div className="absolute -inset-2 border-2 border-blue-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
+                <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-green-500/30 group">
+                  <div className="absolute -inset-2 border-2 border-green-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
                   <img
                     src="https://avatars.githubusercontent.com/u/243470657?s=200&v=4"
                     alt="XeraWork"
@@ -48,19 +48,19 @@ export default function Projects() {
                 className="w-full md:w-2/3"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Calendar size={18} className="text-blue-600" />
-                  <span className="text-blue-600 font-medium">2025 - Present</span>
+                  <Calendar size={18} className="text-green-600" />
+                  <span className="text-green-600 font-medium">2025 - Present</span>
                 </div>
                 
                 <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Full Stack Developer</h2>
-                <h3 className="text-xl font-semibold text-blue-600 mb-4">xerawork.ma</h3>
+                <h3 className="text-xl font-semibold text-green-600 mb-4">xerawork.ma</h3>
                 
                 <div className="space-y-4 mb-6">
                   <p className="text-gray-700 text-lg leading-relaxed">
                     Building a comprehensive multi-language platform from scratch as my own project. Designed the entire system architecture, database schema, and user interface. Collaborating with IRCAM for Amazigh language correction and validation.
                   </p>
                   
-                  <div className="bg-blue-50 rounded-xl p-4">
+                  <div className="bg-green-50 rounded-xl p-4">
                     <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                       <Globe size={18} />
                       Multi-Language Support
@@ -70,7 +70,7 @@ export default function Projects() {
                     </p>
                   </div>
                   
-                  <div className="bg-blue-50 rounded-xl p-4">
+                  <div className="bg-green-50 rounded-xl p-4">
                     <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                       <Database size={18} />
                       Full Stack Architecture
@@ -80,7 +80,7 @@ export default function Projects() {
                     </p>
                   </div>
                   
-                  <div className="bg-blue-50 rounded-xl p-4">
+                  <div className="bg-green-50 rounded-xl p-4">
                     <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                       <Code size={18} />
                       IRCAM Collaboration
@@ -92,10 +92,10 @@ export default function Projects() {
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Full Stack</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Multi-Language</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Database Design</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">IRCAM Partnership</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Full Stack</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Multi-Language</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Database Design</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">IRCAM Partnership</span>
                   <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">Work in Progress</span>
                 </div>
 
