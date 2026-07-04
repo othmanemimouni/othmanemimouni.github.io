@@ -8,7 +8,7 @@ export default function Projects() {
   const xeraWorkRef = useRef<HTMLDivElement>(null);
   const alibestRef = useRef<HTMLDivElement>(null);
 
-  const downloadProject = async (ref: React.RefObject<HTMLDivElement>, name: string) => {
+  const downloadProject = async (project: 'xerawork' | 'alibest') => {
     const wasExpanded = showMore;
     
     // Expand details before downloading
@@ -17,22 +17,88 @@ export default function Projects() {
     // Wait for animation to complete
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    if (ref.current) {
-      try {
-        const canvas = await html2canvas(ref.current, {
-          scale: 2,
-          useCORS: true,
-          backgroundColor: '#ffffff'
-        });
-        
-        const link = document.createElement('a');
-        link.download = `${name}-details.png`;
-        link.href = canvas.toDataURL();
-        link.click();
-      } catch (error) {
-        console.error('Error downloading:', error);
-      }
+    // Create CV-style container
+    const cvContainer = document.createElement('div');
+    cvContainer.style.position = 'absolute';
+    cvContainer.style.left = '-9999px';
+    cvContainer.style.top = '0';
+    cvContainer.style.width = '800px';
+    cvContainer.style.padding = '40px';
+    cvContainer.style.backgroundColor = '#ffffff';
+    cvContainer.style.fontFamily = 'system-ui, sans-serif';
+    
+    if (project === 'xerawork') {
+      cvContainer.innerHTML = `
+        <div style="text-align: center; margin-bottom: 30px;">
+          <img src="https://avatars.githubusercontent.com/u/243470657?s=200&v=4" alt="XeraWork" style="width: 120px; height: 120px; object-fit: contain; margin-bottom: 20px;" />
+          <h1 style="font-size: 32px; font-weight: bold; color: #1a1a1a; margin: 0;">XeraWork</h1>
+          <p style="font-size: 18px; color: #059669; margin: 10px 0;">Full Stack Developer</p>
+          <p style="font-size: 14px; color: #666;">2025 - Present</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <p style="font-size: 16px; line-height: 1.6; color: #333;">Building a comprehensive multi-language platform from scratch as my own project. Designed the entire system architecture, database schema, and user interface. Collaborating with IRCAM for Amazigh language correction and validation.</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-size: 18px; font-weight: bold; color: #1a1a1a; margin-bottom: 10px;">Key Features</h3>
+          <ul style="font-size: 14px; color: #333; line-height: 1.8;">
+            <li>Multi-Language Support: Platform supports Amazigh, Arabic, French, and English languages</li>
+            <li>Full Stack Architecture: Complete database architecture, backend APIs, and frontend interfaces</li>
+            <li>IRCAM Collaboration: Partnering with IRCAM for accurate Amazigh language representation</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size: 18px; font-weight: bold; color: #1a1a1a; margin-bottom: 10px;">Detailed Features</h3>
+          <ul style="font-size: 14px; color: #333; line-height: 1.8;">
+            <li>Authentication System: Secure login with GitHub and Google OAuth</li>
+            <li>Overview & Analytics: Platform dashboard with activity tracking</li>
+            <li>Create & Publishing: Content creation tools for posts, articles, projects</li>
+            <li>Network & Social: Contact management, search functionality, followers system</li>
+            <li>Communication: Real-time chat, discussion rooms, video meetings</li>
+            <li>Profile & Achievements: User posts, bookmarks, achievements system</li>
+            <li>Support System: Email support, ticket management, help center</li>
+            <li>Account Management: User certifications, subscription management</li>
+          </ul>
+        </div>
+      `;
+    } else {
+      cvContainer.innerHTML = `
+        <div style="text-align: center; margin-bottom: 30px;">
+          <img src="https://alibest-travaux.vercel.app/assets/Abtlogo-Cgk4YORS.png" alt="AliBest Travaux" style="width: 120px; height: 120px; object-fit: contain; margin-bottom: 20px;" />
+          <h1 style="font-size: 32px; font-weight: bold; color: #1a1a1a; margin: 0;">AliBest Travaux</h1>
+          <p style="font-size: 18px; color: #ea580c; margin: 10px 0;">Full Stack Developer</p>
+          <p style="font-size: 14px; color: #666;">2026</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <p style="font-size: 16px; line-height: 1.6; color: #333;">Built a comprehensive construction management platform from scratch, developing both the public-facing website and a secure admin dashboard for internal operations.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 18px; font-weight: bold; color: #1a1a1a; margin-bottom: 10px;">Key Features</h3>
+          <ul style="font-size: 14px; color: #333; line-height: 1.8;">
+            <li>Main Website: Developed the primary platform showcasing services and projects</li>
+            <li>Admin Dashboard: Secure admin system for internal team management</li>
+          </ul>
+        </div>
+      `;
     }
+    
+    document.body.appendChild(cvContainer);
+    
+    try {
+      const canvas = await html2canvas(cvContainer, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ffffff'
+      });
+      
+      const link = document.createElement('a');
+      link.download = `${project}-details.png`;
+      link.href = canvas.toDataURL();
+      link.click();
+    } catch (error) {
+      console.error('Error downloading:', error);
+    }
+    
+    document.body.removeChild(cvContainer);
     
     // Restore original state
     if (!wasExpanded) {
@@ -260,7 +326,7 @@ export default function Projects() {
                 </div>
 
                 <button
-                  onClick={() => downloadProject(xeraWorkRef, 'xerawork')}
+                  onClick={() => downloadProject('xerawork')}
                   className="mt-4 flex items-center justify-center gap-2 w-full py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-medium transition-colors"
                   aria-label="Download XeraWork project details"
                 >
@@ -364,7 +430,7 @@ export default function Projects() {
                 </div>
 
                 <button
-                  onClick={() => downloadProject(alibestRef, 'alibest-travaux')}
+                  onClick={() => downloadProject('alibest')}
                   className="mt-4 flex items-center justify-center gap-2 w-full py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-medium transition-colors"
                   aria-label="Download AliBest Travaux project details"
                 >
