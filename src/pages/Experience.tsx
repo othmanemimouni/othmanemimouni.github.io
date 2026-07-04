@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, ExternalLink, Calendar, Building2 } from 'lucide-react';
+import { Briefcase, ExternalLink, Calendar } from 'lucide-react';
 
 export default function Experience() {
 
@@ -31,16 +31,13 @@ export default function Experience() {
             >
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-navy-100 to-navy-200">
                 <img
-                  src="/assets/img/alibest-placeholder.jpg"
-                  alt="AliBest Travaux"
-                  className="w-full h-full object-cover"
+                  src="https://alibest-travaux.vercel.app/assets/Abtlogo-Cgk4YORS.png"
+                  alt="alibbesttravaux.ma"
+                  className="w-full h-full object-contain p-8"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                   }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-navy-50">
-                  <Building2 size={64} className="text-navy-300" />
-                </div>
               </div>
             </motion.div>
 
