@@ -33,12 +33,11 @@ export default function Projects() {
               >
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-blue-500/30 group">
                   <div className="absolute inset-0 border-2 border-blue-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
-                  <div className="relative w-full h-full flex items-center justify-center p-8 z-10">
-                    <div className="text-center">
-                      <div className="text-6xl font-bold text-blue-600 mb-2">XW</div>
-                      <div className="text-sm text-gray-600">XeraWork</div>
-                    </div>
-                  </div>
+                  <img
+                    src="https://avatars.githubusercontent.com/u/243470657?s=200&v=4"
+                    alt="XeraWork"
+                    className="relative w-full h-full object-contain p-8 z-10"
+                  />
                 </div>
               </motion.div>
 
