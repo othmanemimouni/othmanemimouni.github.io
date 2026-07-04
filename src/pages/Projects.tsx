@@ -9,6 +9,14 @@ export default function Projects() {
   const alibestRef = useRef<HTMLDivElement>(null);
 
   const downloadProject = async (ref: React.RefObject<HTMLDivElement>, name: string) => {
+    const wasExpanded = showMore;
+    
+    // Expand details before downloading
+    setShowMore(true);
+    
+    // Wait for animation to complete
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
     if (ref.current) {
       try {
         const canvas = await html2canvas(ref.current, {
@@ -24,6 +32,11 @@ export default function Projects() {
       } catch (error) {
         console.error('Error downloading:', error);
       }
+    }
+    
+    // Restore original state
+    if (!wasExpanded) {
+      setShowMore(false);
     }
   };
 
