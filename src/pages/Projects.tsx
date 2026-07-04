@@ -68,12 +68,9 @@ export default function Projects() {
             }}
             className="group"
           >
-            <div className="glass-card p-6 h-full border-2 border-green-500/20 hover:border-green-500/40 transition-all duration-300 rounded-3xl overflow-hidden relative">
-              {/* Hover gradient effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              <div className="relative z-10">
-                {/* Logo */}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 relative">
+              {/* Header with gradient */}
+              <div className="h-32 bg-gradient-to-br from-green-400 to-green-600 relative">
                 <motion.div
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   animate={{
@@ -85,7 +82,7 @@ export default function Projects() {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-white border-2 border-green-500/30 flex items-center justify-center p-4 shadow-lg"
+                  className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-white rounded-2xl border-4 border-white shadow-lg flex items-center justify-center p-3"
                 >
                   <img
                     src="https://avatars.githubusercontent.com/u/243470657?s=200&v=4"
@@ -93,8 +90,10 @@ export default function Projects() {
                     className="w-full h-full object-contain"
                   />
                 </motion.div>
+              </div>
 
-                {/* Content */}
+              {/* Content */}
+              <div className="pt-16 pb-6 px-6">
                 <div className="text-center mb-4">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Calendar size={16} className="text-green-600" />
@@ -110,16 +109,16 @@ export default function Projects() {
                 </div>
 
                 {/* Key Features */}
-                <div className="space-y-3 mb-4">
-                  <div className="flex items-center gap-2 text-sm">
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center gap-2 text-sm bg-green-50 p-2 rounded-lg">
                     <Globe size={16} className="text-green-600" />
                     <span className="text-gray-700">Multi-Language Support</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center gap-2 text-sm bg-green-50 p-2 rounded-lg">
                     <Database size={16} className="text-green-600" />
                     <span className="text-gray-700">Full Stack Architecture</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center gap-2 text-sm bg-green-50 p-2 rounded-lg">
                     <Code size={16} className="text-green-600" />
                     <span className="text-gray-700">IRCAM Collaboration</span>
                   </div>
@@ -222,12 +221,9 @@ export default function Projects() {
             }}
             className="group"
           >
-            <div className="glass-card p-6 h-full border-2 border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 rounded-3xl overflow-hidden relative">
-              {/* Hover gradient effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              <div className="relative z-10">
-                {/* Logo */}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 relative">
+              {/* Header with gradient */}
+              <div className="h-32 bg-gradient-to-br from-orange-400 to-orange-600 relative">
                 <motion.div
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   animate={{
@@ -240,7 +236,7 @@ export default function Projects() {
                     ease: "easeInOut",
                     delay: 1.5
                   }}
-                  className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-white border-2 border-orange-500/30 flex items-center justify-center p-4 shadow-lg"
+                  className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-white rounded-2xl border-4 border-white shadow-lg flex items-center justify-center p-3"
                 >
                   <img
                     src="https://alibest-travaux.vercel.app/assets/Abtlogo-Cgk4YORS.png"
@@ -248,8 +244,10 @@ export default function Projects() {
                     className="w-full h-full object-contain"
                   />
                 </motion.div>
+              </div>
 
-                {/* Content */}
+              {/* Content */}
+              <div className="pt-16 pb-6 px-6">
                 <div className="text-center mb-4">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Calendar size={16} className="text-orange-600" />
@@ -273,12 +271,12 @@ export default function Projects() {
                 </div>
 
                 {/* Key Features */}
-                <div className="space-y-3 mb-4">
-                  <div className="flex items-center gap-2 text-sm">
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center gap-2 text-sm bg-orange-50 p-2 rounded-lg">
                     <Briefcase size={16} className="text-orange-600" />
                     <span className="text-gray-700">Main Website</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center gap-2 text-sm bg-orange-50 p-2 rounded-lg">
                     <Briefcase size={16} className="text-orange-600" />
                     <span className="text-gray-700">Admin Dashboard</span>
                     <span className="px-2 py-0.5 bg-orange-200 text-orange-800 text-xs rounded-full">Private</span>
