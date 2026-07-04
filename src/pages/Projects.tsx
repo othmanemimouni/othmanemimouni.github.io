@@ -1,9 +1,31 @@
 import { motion } from 'framer-motion';
-import { Briefcase, ExternalLink, Calendar, Globe, Database, Code, MessageSquare, ChevronDown, ChevronUp, Lock, Users, Award, HelpCircle, Settings, BarChart3, FileText } from 'lucide-react';
-import { useState } from 'react';
+import { Briefcase, ExternalLink, Calendar, Globe, Database, Code, MessageSquare, ChevronDown, ChevronUp, Lock, Users, Award, HelpCircle, Settings, BarChart3, FileText, Download } from 'lucide-react';
+import { useState, useRef } from 'react';
+import html2canvas from 'html2canvas';
 
 export default function Projects() {
   const [showMore, setShowMore] = useState(false);
+  const xeraWorkRef = useRef<HTMLDivElement>(null);
+  const alibestRef = useRef<HTMLDivElement>(null);
+
+  const downloadProject = async (ref: React.RefObject<HTMLDivElement>, name: string) => {
+    if (ref.current) {
+      try {
+        const canvas = await html2canvas(ref.current, {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: '#ffffff'
+        });
+        
+        const link = document.createElement('a');
+        link.download = `${name}-details.png`;
+        link.href = canvas.toDataURL();
+        link.click();
+      } catch (error) {
+        console.error('Error downloading:', error);
+      }
+    }
+  };
 
   return (
     <div className="min-h-screen pt-20 pb-20 px-4 sm:px-6 lg:px-8">
@@ -26,7 +48,7 @@ export default function Projects() {
             transition={{ delay: 0.2 }}
             className="glass-card p-6 md:p-8 border-2 border-green-500/20"
           >
-            <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div ref={xeraWorkRef} className="flex flex-col md:flex-row gap-8 items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -223,6 +245,15 @@ export default function Projects() {
                     🚧 This project is currently under development. Check back soon for updates!
                   </p>
                 </div>
+
+                <button
+                  onClick={() => downloadProject(xeraWorkRef, 'xerawork')}
+                  className="mt-4 flex items-center justify-center gap-2 w-full py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-medium transition-colors"
+                  aria-label="Download XeraWork project details"
+                >
+                  <Download size={18} />
+                  Download Details
+                </button>
               </motion.div>
             </div>
           </motion.div>
@@ -234,7 +265,7 @@ export default function Projects() {
             transition={{ delay: 0.5 }}
             className="glass-card p-6 md:p-8 border-2 border-orange-500/20"
           >
-            <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div ref={alibestRef} className="flex flex-col md:flex-row gap-8 items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -318,6 +349,15 @@ export default function Projects() {
                   <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Admin System</span>
                   <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Project Management</span>
                 </div>
+
+                <button
+                  onClick={() => downloadProject(alibestRef, 'alibest-travaux')}
+                  className="mt-4 flex items-center justify-center gap-2 w-full py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-medium transition-colors"
+                  aria-label="Download AliBest Travaux project details"
+                >
+                  <Download size={18} />
+                  Download Details
+                </button>
               </motion.div>
             </div>
           </motion.div>
