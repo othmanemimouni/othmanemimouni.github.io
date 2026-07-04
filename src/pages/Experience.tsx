@@ -57,7 +57,7 @@ export default function Experience() {
                 rel="noopener noreferrer"
                 className="text-xl font-semibold text-green-600 mb-4 hover:text-green-800 transition-colors inline-block"
               >
-                Yadex - LedDelivery
+                LedDelivery
               </a>
               
               <div className="space-y-4 mb-6">
