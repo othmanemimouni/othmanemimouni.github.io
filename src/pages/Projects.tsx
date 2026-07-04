@@ -37,7 +37,7 @@ export default function Projects() {
                   <div className="absolute -inset-2 border-2 border-green-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
                   <img
                     src="https://avatars.githubusercontent.com/u/243470657?s=200&v=4"
-                    alt="XeraWork"
+                    alt="XeraWork project logo"
                     className="relative w-full h-full object-contain p-8"
                   />
                 </div>
@@ -245,7 +245,7 @@ export default function Projects() {
                   <div className="absolute inset-0 border-2 border-orange-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
                   <img
                     src="https://alibest-travaux.vercel.app/assets/Abtlogo-Cgk4YORS.png"
-                    alt="alibbesttravaux.ma"
+                    alt="AliBest Travaux company logo"
                     className="relative w-full h-full object-contain p-8 z-10"
                   />
                 </div>

@@ -33,7 +33,7 @@ export default function Experience() {
                 <div className="absolute inset-0 border-2 border-green-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
                 <img
                   src="https://cdn.leddelivery.ma/images/company/1736534556-197-logo_yadex.png"
-                  alt="Yadex"
+                  alt="LedDelivery company logo"
                   className="relative w-full h-full object-contain p-8 z-10"
                 />
               </div>

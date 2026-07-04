@@ -44,27 +44,30 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`relative font-medium transition-colors duration-200 tracking-wide ${
-                  location.pathname === item.path ? 'text-navy-900' : 'text-navy-600 hover:text-navy-900'
-                }`}
-              >
-                {item.name}
-                {location.pathname === item.path && (
-                  <motion.div
-                    layoutId="navbar-indicator"
-                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-navy-500 to-navy-700"
-                    initial={false}
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </Link>
-            ))}
-          </div>
+          <nav aria-label="Main navigation">
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  aria-label={`Navigate to ${item.name}`}
+                  className={`relative font-medium transition-colors duration-200 tracking-wide ${
+                    location.pathname === item.path ? 'text-navy-900' : 'text-navy-600 hover:text-navy-900'
+                  }`}
+                >
+                  {item.name}
+                  {location.pathname === item.path && (
+                    <motion.div
+                      layoutId="navbar-indicator"
+                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-navy-500 to-navy-700"
+                      initial={false}
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              ))}
+            </div>
+          </nav>
 
           {/* Mobile menu button */}
           <button
@@ -86,12 +89,15 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-t border-cream-300 bg-cream-50/95 backdrop-blur-lg"
+            role="navigation"
+            aria-label="Mobile navigation"
           >
             <div className="px-4 py-4 space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
+                  aria-label={`Navigate to ${item.name}`}
                   className={`block px-4 py-3 rounded-lg transition-colors ${
                     location.pathname === item.path
                       ? 'bg-navy-500/20 text-navy-900'
