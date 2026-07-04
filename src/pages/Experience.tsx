@@ -56,7 +56,7 @@ export default function Experience() {
               </div>
               
               <h2 className="text-3xl font-bold text-navy-900 mb-2 tracking-tight">Full Stack Developer</h2>
-              <h3 className="text-xl font-semibold text-navy-700 mb-4">AliBest Travaux</h3>
+              <h3 className="text-xl font-semibold text-navy-700 mb-4">alibbesttravaux.ma</h3>
               
               <div className="space-y-4 mb-6">
                 <p className="text-navy-700 text-lg leading-relaxed">
@@ -86,19 +86,14 @@ export default function Experience() {
                   <h4 className="font-semibold text-navy-900 mb-2 flex items-center gap-2">
                     <Briefcase size={18} />
                     Admin Dashboard
+                    <span className="ml-2 px-2 py-0.5 bg-navy-200 text-navy-800 text-xs rounded-full">Private</span>
                   </h4>
                   <p className="text-navy-700 mb-3">
                     Engineered a secure admin system for internal team management, featuring project tracking, employee management, payment processing, and invoice generation.
                   </p>
-                  <a 
-                    href="https://adminsalibesttravaux.vercel.app/login" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-navy-600 hover:text-navy-800 font-medium transition-colors"
-                  >
-                    <ExternalLink size={16} />
-                    Access Admin Panel
-                  </a>
+                  <p className="text-navy-500 text-sm italic">
+                    Access restricted to authorized personnel only
+                  </p>
                 </div>
               </div>
 
