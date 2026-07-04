@@ -58,6 +58,14 @@ export default function Projects() {
               y: -10,
               transition: { duration: 0.3 }
             }}
+            animate={{
+              y: [0, -5, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
             className="group"
           >
             <div className="glass-card p-6 h-full border-2 border-green-500/20 hover:border-green-500/40 transition-all duration-300 rounded-3xl overflow-hidden relative">
@@ -68,7 +76,15 @@ export default function Projects() {
                 {/* Logo */}
                 <motion.div
                   whileHover={{ scale: 1.05, rotate: 2 }}
-                  transition={{ duration: 0.3 }}
+                  animate={{
+                    rotate: [0, 2, 0],
+                    scale: [1, 1.02, 1]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
                   className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-white border-2 border-green-500/30 flex items-center justify-center p-4 shadow-lg"
                 >
                   <img
@@ -195,6 +211,15 @@ export default function Projects() {
               y: -10,
               transition: { duration: 0.3 }
             }}
+            animate={{
+              y: [0, -5, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1.5
+            }}
             className="group"
           >
             <div className="glass-card p-6 h-full border-2 border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 rounded-3xl overflow-hidden relative">
@@ -205,7 +230,16 @@ export default function Projects() {
                 {/* Logo */}
                 <motion.div
                   whileHover={{ scale: 1.05, rotate: 2 }}
-                  transition={{ duration: 0.3 }}
+                  animate={{
+                    rotate: [0, -2, 0],
+                    scale: [1, 1.02, 1]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1.5
+                  }}
                   className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-white border-2 border-orange-500/30 flex items-center justify-center p-4 shadow-lg"
                 >
                   <img
