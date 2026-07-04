@@ -29,14 +29,11 @@ export default function Experience() {
               transition={{ delay: 0.3 }}
               className="w-full md:w-1/3"
             >
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-navy-100 to-navy-200">
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-orange-500/20">
                 <img
                   src="https://alibest-travaux.vercel.app/assets/Abtlogo-Cgk4YORS.png"
                   alt="alibbesttravaux.ma"
                   className="w-full h-full object-contain p-8"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
                 />
               </div>
             </motion.div>
@@ -48,57 +45,57 @@ export default function Experience() {
               className="w-full md:w-2/3"
             >
               <div className="flex items-center gap-2 mb-4">
-                <Calendar size={18} className="text-navy-600" />
-                <span className="text-navy-600 font-medium">2026</span>
+                <Calendar size={18} className="text-orange-600" />
+                <span className="text-orange-600 font-medium">2026</span>
               </div>
               
-              <h2 className="text-3xl font-bold text-navy-900 mb-2 tracking-tight">Full Stack Developer</h2>
-              <h3 className="text-xl font-semibold text-navy-700 mb-4">alibbesttravaux.ma</h3>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Full Stack Developer</h2>
+              <h3 className="text-xl font-semibold text-orange-600 mb-4">alibbesttravaux.ma</h3>
               
               <div className="space-y-4 mb-6">
-                <p className="text-navy-700 text-lg leading-relaxed">
+                <p className="text-gray-700 text-lg leading-relaxed">
                   Built a comprehensive construction management platform from scratch, developing both the public-facing website and a secure admin dashboard for internal operations.
                 </p>
                 
-                <div className="bg-navy-50 rounded-xl p-4">
-                  <h4 className="font-semibold text-navy-900 mb-2 flex items-center gap-2">
+                <div className="bg-orange-50 rounded-xl p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                     <Briefcase size={18} />
                     Main Website
                   </h4>
-                  <p className="text-navy-700 mb-3">
+                  <p className="text-gray-700 mb-3">
                     Developed the primary platform showcasing services, projects, and company information with modern UI/UX design.
                   </p>
                   <a 
                     href="https://alibest-travaux.vercel.app/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-navy-600 hover:text-navy-800 font-medium transition-colors"
+                    className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium transition-colors"
                   >
                     <ExternalLink size={16} />
                     View Live Site
                   </a>
                 </div>
                 
-                <div className="bg-navy-50 rounded-xl p-4">
-                  <h4 className="font-semibold text-navy-900 mb-2 flex items-center gap-2">
+                <div className="bg-orange-50 rounded-xl p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                     <Briefcase size={18} />
                     Admin Dashboard
-                    <span className="ml-2 px-2 py-0.5 bg-navy-200 text-navy-800 text-xs rounded-full">Private</span>
+                    <span className="ml-2 px-2 py-0.5 bg-orange-200 text-orange-800 text-xs rounded-full">Private</span>
                   </h4>
-                  <p className="text-navy-700 mb-3">
+                  <p className="text-gray-700 mb-3">
                     Engineered a secure admin system for internal team management, featuring project tracking, employee management, payment processing, and invoice generation.
                   </p>
-                  <p className="text-navy-500 text-sm italic">
+                  <p className="text-gray-500 text-sm italic">
                     Access restricted to authorized personnel only
                   </p>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm font-medium">Full Stack</span>
-                <span className="px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm font-medium">React</span>
-                <span className="px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm font-medium">Admin System</span>
-                <span className="px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm font-medium">Project Management</span>
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Full Stack</span>
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">React</span>
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Admin System</span>
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Project Management</span>
               </div>
             </motion.div>
           </div>
