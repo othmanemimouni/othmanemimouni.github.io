@@ -51,7 +51,14 @@ export default function Experience() {
               </div>
               
               <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Business Operations Intern</h2>
-              <h3 className="text-xl font-semibold text-green-600 mb-4">Yadex - LedDelivery</h3>
+              <a 
+                href="https://leddelivery.ma/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xl font-semibold text-green-600 mb-4 hover:text-green-800 transition-colors inline-block"
+              >
+                Yadex - LedDelivery
+              </a>
               
               <div className="space-y-4 mb-6">
                 <p className="text-gray-700 text-lg leading-relaxed">
