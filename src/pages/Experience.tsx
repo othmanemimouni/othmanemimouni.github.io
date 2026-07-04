@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Calendar, Lightbulb, Target, Users } from 'lucide-react';
+import { Calendar, Lightbulb, Target, Users, ExternalLink } from 'lucide-react';
 
 export default function Experience() {
 
@@ -55,9 +55,10 @@ export default function Experience() {
                 href="https://leddelivery.ma/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-xl font-semibold text-green-600 mb-4 hover:text-green-800 transition-colors inline-block"
+                className="text-xl font-semibold text-green-600 mb-4 hover:text-green-800 transition-colors inline-flex items-center gap-2"
               >
                 LedDelivery
+                <ExternalLink size={16} />
               </a>
               
               <div className="space-y-4 mb-6">

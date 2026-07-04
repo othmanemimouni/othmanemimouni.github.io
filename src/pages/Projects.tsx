@@ -267,9 +267,10 @@ export default function Projects() {
                   href="https://alibest-travaux.vercel.app/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-xl font-semibold text-orange-600 mb-4 hover:text-orange-800 transition-colors inline-block"
+                  className="text-xl font-semibold text-orange-600 mb-4 hover:text-orange-800 transition-colors inline-flex items-center gap-2"
                 >
                   alibbesttravaux.ma
+                  <ExternalLink size={16} />
                 </a>
                 
                 <div className="space-y-4 mb-6">
