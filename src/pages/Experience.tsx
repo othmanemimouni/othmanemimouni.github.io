@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Calendar, Bug, Truck, Megaphone } from 'lucide-react';
+import { Calendar, Lightbulb, Target, Users } from 'lucide-react';
 
 export default function Experience() {
 
@@ -50,50 +50,50 @@ export default function Experience() {
                 <span className="text-green-600 font-medium">2026</span>
               </div>
               
-              <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Full Stack Developer</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Business Operations Intern</h2>
               <h3 className="text-xl font-semibold text-green-600 mb-4">Yadex - LedDelivery</h3>
               
               <div className="space-y-4 mb-6">
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Developed and maintained the delivery management system, focusing on retour commands processing, bug tracking, and system optimization for seamless logistics operations.
+                  Spent 1 month learning the inner workings of a delivery agency, understanding marketing strategies, system operations, and business processes to gain comprehensive industry knowledge.
                 </p>
                 
                 <div className="bg-green-50 rounded-xl p-4">
                   <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <Bug size={18} />
-                    Bug Tracking & System Debugging
+                    <Lightbulb size={18} />
+                    Marketing Strategy
                   </h4>
                   <p className="text-gray-700">
-                    Identified and resolved critical issues in the retour commands system, ensuring error-free processing and improved system reliability.
+                    Learned how the agency approaches marketing, customer acquisition, and promotional campaigns to grow their delivery business.
                   </p>
                 </div>
                 
                 <div className="bg-green-50 rounded-xl p-4">
                   <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <Truck size={18} />
-                    Delivery Operations
+                    <Target size={18} />
+                    System Operations
                   </h4>
                   <p className="text-gray-700">
-                    Optimized the delivery workflow and retour commands system to streamline logistics and enhance customer experience.
+                    Gained hands-on experience with the delivery management system, including retour commands processing and workflow optimization.
                   </p>
                 </div>
                 
                 <div className="bg-green-50 rounded-xl p-4">
                   <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <Megaphone size={18} />
-                    Marketing Integration
+                    <Users size={18} />
+                    Business Insights
                   </h4>
                   <p className="text-gray-700">
-                    Collaborated on marketing features and promotional campaigns within the delivery platform to drive user engagement.
+                    Developed understanding of agency operations, client relationships, and the logistics industry to apply these insights to future projects.
                   </p>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Full Stack</span>
-                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Delivery System</span>
-                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Bug Fixing</span>
+                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Business Operations</span>
+                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Marketing</span>
                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Logistics</span>
+                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Agency Operations</span>
               </div>
             </motion.div>
           </div>
