@@ -33,11 +33,18 @@ export default function Projects() {
               >
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-blue-500/30 group">
                   <div className="absolute inset-0 border-2 border-blue-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
-                  <img
-                    src="https://avatars.githubusercontent.com/u/243470657?s=200&v=4"
-                    alt="XeraWork"
-                    className="relative w-full h-full object-contain p-8 z-10"
-                  />
+                  <div className="relative w-full h-full flex flex-col items-center justify-center p-6 gap-4 z-10">
+                    <img
+                      src="https://avatars.githubusercontent.com/u/243470657?s=200&v=4"
+                      alt="XeraWork"
+                      className="w-24 h-24 object-contain"
+                    />
+                    <img
+                      src="https://icath-conf.org/icaths/files/ircam.jpg"
+                      alt="IRCAM"
+                      className="w-20 h-20 object-contain"
+                    />
+                  </div>
                 </div>
               </motion.div>
 
