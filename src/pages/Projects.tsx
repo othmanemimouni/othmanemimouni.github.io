@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
-import { Briefcase, ExternalLink, Calendar, Globe, Database, Code } from 'lucide-react';
+import { Briefcase, ExternalLink, Calendar, Globe, Database, Code, MessageSquare, Newspaper, Video, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Projects() {
+  const [showMore, setShowMore] = useState(false);
 
   return (
     <div className="min-h-screen pt-20 pb-20 px-4 sm:px-6 lg:px-8">
@@ -88,6 +90,65 @@ export default function Projects() {
                     <p className="text-gray-700">
                       Partnering with IRCAM (Royal Institute of Amazigh Culture) to ensure accurate Amazigh language representation and cultural authenticity in the platform.
                     </p>
+                  </div>
+
+                  {/* Expandable Details */}
+                  <div className="overflow-hidden">
+                    <button
+                      onClick={() => setShowMore(!showMore)}
+                      className="w-full flex items-center justify-center gap-2 text-green-600 font-medium hover:text-green-800 transition-colors py-2"
+                    >
+                      {showMore ? (
+                        <>
+                          <ChevronUp size={18} />
+                          Show Less
+                        </>
+                      ) : (
+                        <>
+                          <ChevronDown size={18} />
+                          See More Details
+                        </>
+                      )}
+                    </button>
+                    
+                    {showMore && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="space-y-4 pt-4"
+                      >
+                        <div className="bg-green-50 rounded-xl p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <MessageSquare size={18} />
+                            Q&A Platform
+                          </h4>
+                          <p className="text-gray-700">
+                            Interactive question and answer system allowing users to ask questions, share knowledge, and engage with the community across all supported languages.
+                          </p>
+                        </div>
+                        
+                        <div className="bg-green-50 rounded-xl p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <Newspaper size={18} />
+                            News & Updates
+                          </h4>
+                          <p className="text-gray-700">
+                            Dynamic news posting system for sharing latest updates, announcements, and educational content with real-time publishing capabilities.
+                          </p>
+                        </div>
+                        
+                        <div className="bg-green-50 rounded-xl p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <Video size={18} />
+                            Meeting Calls
+                          </h4>
+                          <p className="text-gray-700">
+                            Integrated video conferencing and meeting scheduling features for virtual collaboration, workshops, and interactive sessions.
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
                   </div>
                 </div>
 
