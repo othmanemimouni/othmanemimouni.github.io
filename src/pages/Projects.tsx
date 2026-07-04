@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, ExternalLink, Calendar, Globe, Database, Code, MessageSquare, Newspaper, Video, ChevronDown, ChevronUp } from 'lucide-react';
+import { Briefcase, ExternalLink, Calendar, Globe, Database, Code, MessageSquare, ChevronDown, ChevronUp, Lock, Users, Award, HelpCircle, Settings, BarChart3, FileText } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Projects() {
@@ -118,33 +118,91 @@ export default function Projects() {
                         exit={{ opacity: 0, height: 0 }}
                         className="space-y-4 pt-4"
                       >
+                        {/* Authentication */}
+                        <div className="bg-green-50 rounded-xl p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <Lock size={18} />
+                            Authentication System
+                          </h4>
+                          <p className="text-gray-700">
+                            Secure login with GitHub and Google OAuth, password reset functionality, email verification, and comprehensive user authentication management.
+                          </p>
+                        </div>
+
+                        {/* Overview & Analytics */}
+                        <div className="bg-green-50 rounded-xl p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <BarChart3 size={18} />
+                            Overview & Analytics
+                          </h4>
+                          <p className="text-gray-700">
+                            Platform dashboard with activity tracking, analytics overview, and roadmap visualization for users and administrators.
+                          </p>
+                        </div>
+
+                        {/* Create & Publishing */}
+                        <div className="bg-green-50 rounded-xl p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <FileText size={18} />
+                            Create & Publishing
+                          </h4>
+                          <p className="text-gray-700">
+                            Content creation tools for posts, articles, projects, and events with rich text editing, media uploads, and publishing workflows.
+                          </p>
+                        </div>
+
+                        {/* Network */}
+                        <div className="bg-green-50 rounded-xl p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <Users size={18} />
+                            Network & Social
+                          </h4>
+                          <p className="text-gray-700">
+                            Contact management, search functionality, followers system, friends connections, and mentorship features for community building.
+                          </p>
+                        </div>
+
+                        {/* Communication */}
                         <div className="bg-green-50 rounded-xl p-4">
                           <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                             <MessageSquare size={18} />
-                            Q&A Platform
+                            Communication
                           </h4>
                           <p className="text-gray-700">
-                            Interactive question and answer system allowing users to ask questions, share knowledge, and engage with the community across all supported languages.
+                            Real-time chat, discussion rooms, video meetings (coming soon), announcements, and notification system for seamless communication.
                           </p>
                         </div>
-                        
+
+                        {/* Profile */}
                         <div className="bg-green-50 rounded-xl p-4">
                           <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                            <Newspaper size={18} />
-                            News & Updates
+                            <Award size={18} />
+                            Profile & Achievements
                           </h4>
                           <p className="text-gray-700">
-                            Dynamic news posting system for sharing latest updates, announcements, and educational content with real-time publishing capabilities.
+                            User posts, bookmarks, achievements system, reputation points, personal notes, and calendar integration for profile management.
                           </p>
                         </div>
-                        
+
+                        {/* Support */}
                         <div className="bg-green-50 rounded-xl p-4">
                           <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                            <Video size={18} />
-                            Meeting Calls
+                            <HelpCircle size={18} />
+                            Support System
                           </h4>
                           <p className="text-gray-700">
-                            Integrated video conferencing and meeting scheduling features for virtual collaboration, workshops, and interactive sessions.
+                            Email support, ticket management, and comprehensive help center with FAQs and documentation.
+                          </p>
+                        </div>
+
+                        {/* Account */}
+                        <div className="bg-green-50 rounded-xl p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <Settings size={18} />
+                            Account Management
+                          </h4>
+                          <p className="text-gray-700">
+                            User certifications, subscription management, and comprehensive account settings for personalization and privacy control.
                           </p>
                         </div>
                       </motion.div>
