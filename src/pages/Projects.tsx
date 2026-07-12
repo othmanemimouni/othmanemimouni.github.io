@@ -63,7 +63,7 @@ export default function Projects() {
     } else {
       cvContainer.innerHTML = `
         <div style="text-align: center; margin-bottom: 30px;">
-          <img src="https://alibest-travaux.vercel.app/assets/Abtlogo-Cgk4YORS.png" alt="AliBest Travaux" style="width: 120px; height: 120px; object-fit: contain; margin-bottom: 20px;" />
+          <img src="https://www.alibesttravaux.com/assets/png/Abtlogo-Cgk4YORS.png" alt="AliBest Travaux" style="width: 120px; height: 120px; object-fit: contain; margin-bottom: 20px;" />
           <h1 style="font-size: 32px; font-weight: bold; color: #1a1a1a; margin: 0;">AliBest Travaux</h1>
           <p style="font-size: 18px; color: #ea580c; margin: 10px 0;">Full Stack Developer</p>
           <p style="font-size: 14px; color: #666;">2026</p>
@@ -354,7 +354,7 @@ export default function Projects() {
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border-2 border-orange-500/30 group">
                   <div className="absolute inset-0 border-2 border-orange-500/50 rounded-2xl transform rotate-6 opacity-50 transition-transform duration-500 ease-out group-hover:rotate-0" />
                   <img
-                    src="https://alibest-travaux.vercel.app/assets/Abtlogo-Cgk4YORS.png"
+                    src="https://www.alibesttravaux.com/assets/png/Abtlogo-Cgk4YORS.png"
                     alt="AliBest Travaux company logo"
                     className="relative w-full h-full object-contain p-8 z-10"
                   />
@@ -374,12 +374,12 @@ export default function Projects() {
                 
                 <h2 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Full Stack Developer</h2>
                 <a 
-                  href="https://alibest-travaux.vercel.app/" 
+                  href="https://www.alibesttravaux.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-xl font-semibold text-orange-600 mb-4 hover:text-orange-800 transition-colors inline-flex items-center gap-2"
                 >
-                  alibbesttravaux.ma
+                  alibesttravaux.com
                   <ExternalLink size={16} />
                 </a>
                 
@@ -397,7 +397,7 @@ export default function Projects() {
                       Developed the primary platform showcasing services, projects, and company information with modern UI/UX design.
                     </p>
                     <a 
-                      href="https://alibest-travaux.vercel.app/" 
+                      href="https://www.alibesttravaux.com/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium transition-colors"
