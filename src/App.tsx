@@ -10,6 +10,21 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import { useState, useEffect } from 'react';
 
+const isMaintenance = import.meta.env.VITE_MAINTENANCE_MODE === 'true';
+const maintenanceMessage = import.meta.env.VITE_MAINTENANCE_MESSAGE || 'COME BACK LATER';
+
+function MaintenancePage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-950 text-white px-4">
+      <div className="text-center">
+        <h1 className="text-6xl md:text-8xl font-bold animate-pulse">
+          {maintenanceMessage}
+        </h1>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [showCookieConsent, setShowCookieConsent] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -20,7 +35,6 @@ function App() {
       setShowCookieConsent(true);
     }
 
-    // Check if mobile
     setIsMobile(window.innerWidth < 768);
   }, []);
 
@@ -28,6 +42,10 @@ function App() {
     localStorage.setItem('cookieConsent', 'true');
     setShowCookieConsent(false);
   };
+
+  if (isMaintenance) {
+    return <MaintenancePage />;
+  }
 
   return (
     <Router>
