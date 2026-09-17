@@ -8,18 +8,59 @@ import Skills from './pages/Skills';
 import Experience from './pages/Experience';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { JapaneseTowerLandscape } from './components/JapaneseTowerLandscape';
+import '@designcodeio/threeui/style.css';
 
 const isMaintenance = import.meta.env.VITE_MAINTENANCE_MODE === 'true';
-const maintenanceMessage = import.meta.env.VITE_MAINTENANCE_MESSAGE || 'COME BACK LATER';
 
 function MaintenancePage() {
+  const [pointerLocked, setPointerLocked] = useState(false);
+  const towerRef = useRef<{ requestPointerLock: () => void }>(null);
+
+  const activateControls = () => {
+    towerRef.current?.requestPointerLock();
+    setPointerLocked(true);
+  };
+
+  useEffect(() => {
+    const handlePointerLockChange = () => {
+      setPointerLocked(document.pointerLockElement !== null);
+    };
+    document.addEventListener('pointerlockchange', handlePointerLockChange);
+    return () => document.removeEventListener('pointerlockchange', handlePointerLockChange);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-950 text-white px-4">
-      <div className="text-center">
-        <h1 className="text-6xl md:text-8xl font-bold animate-pulse">
-          {maintenanceMessage}
-        </h1>
+    <div className="min-h-screen relative overflow-hidden bg-black">
+      <div className="absolute inset-0 z-0">
+        <div className="japanese-tower-landscape w-full h-full">
+          <JapaneseTowerLandscape ref={towerRef} country="vietnam" />
+        </div>
+        <div className={`absolute inset-0 bg-black/40 transition-opacity ${pointerLocked ? 'opacity-0 pointer-events-none' : ''}`} />
+      </div>
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-6xl md:text-9xl lg:text-[12rem] font-bold tracking-tight font-mono text-white/90 animate-pulse">
+            ERROR 418
+          </h1>
+          <p className="mt-6 text-lg md:text-xl text-gray-400 font-light">
+            I'm a teapot. Come back later.
+          </p>
+        </div>
+        {!pointerLocked && (
+          <button
+            onClick={activateControls}
+            className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white font-medium text-lg transition-all backdrop-blur-sm"
+          >
+            Enable 360° View
+          </button>
+        )}
+        {pointerLocked && (
+          <p className="mt-8 text-gray-500 text-sm font-mono">
+            Press ESC to exit 360° view
+          </p>
+        )}
       </div>
     </div>
   );
