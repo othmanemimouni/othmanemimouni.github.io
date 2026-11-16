@@ -103,7 +103,7 @@ export default function Home() {
             >
               <div>
                 <p className="text-navy-700 text-lg leading-relaxed mb-4">
-                  I'm a self-taught developer and Full-Stack Development student with over a year of hands-on learning and project experience.
+                  I'm a self-taught developer and Full-Stack Development with over a year of hands-on learning and project experience.
                 </p>
                 <p className="text-navy-700 text-lg leading-relaxed">
                   I enjoy transforming ideas into modern, user-friendly web applications while continuously improving my skills through real-world projects and practical experience.

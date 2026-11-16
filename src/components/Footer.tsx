@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
-            <p className="text-navy-600 tracking-wide">© 2026 Othmane Mimouni. All rights reserved.</p>
+            <p className="text-navy-600 tracking-wide">© 2026 Othmane Mimouni. All wrongs reserved.</p>
           </div>
           
           <div className="flex items-center space-x-6">
@@ -30,13 +30,13 @@ export default function Footer() {
               href="https://www.instagram.com/othmanemimounii"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-navy-600 hover:text-navy-900 transition-colors"
+              className="text-navy-600 hover:text-navy-900 transition-colors:text-cream-50"
             >
               <Instagram size={20} />
             </a>
             <a
               href="mailto:utrshall@gmail.com"
-              className="text-navy-600 hover:text-navy-900 transition-colors"
+              className="text-navy-600 hover:text-navy-900 transition-colors:text-cream-50"
             >
               <Mail size={20} />
             </a>

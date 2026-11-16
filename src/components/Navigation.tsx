@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import Logo from './Logo';
 
 const navItems = [
   { name: 'About', path: '/' },
@@ -16,6 +17,12 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,14 +40,31 @@ export default function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-cream-50/95 backdrop-blur-lg shadow-lg shadow-cream-300/30' : 'bg-cream-50/80 backdrop-blur-lg'
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 border-cream-300/60 ${
+        scrolled
+          ? 'bg-cream-50/95 backdrop-blur-lg shadow-lg shadow-cream-300/30'
+          : 'bg-cream-50/80 backdrop-blur-lg'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="font-mono text-xl md:text-2xl font-bold text-navy-900 tracking-tight">OT.MIMOUNI</span>
+          <Link
+            to="/"
+            aria-label="Othmane Mimouni home"
+            className="group flex items-center gap-2.5 text-navy-900"
+          >
+            <Logo
+              className="h-14 w-14 md:h-16 md:w-16 transition-transform duration-300 group-hover:scale-110"
+              animateOnMount
+            />
+            <span className="hidden sm:flex flex-col leading-tight">
+              <span className="font-mono text-sm md:text-base font-semibold tracking-tight">
+                Othmane Mimouni
+              </span>
+              <span className="text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.2em] text-navy-500">
+                crafting the web
+              </span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -52,7 +76,9 @@ export default function Navigation() {
                   to={item.path}
                   aria-label={`Navigate to ${item.name}`}
                   className={`relative font-medium transition-colors duration-200 tracking-wide ${
-                    location.pathname === item.path ? 'text-navy-900' : 'text-navy-600 hover:text-navy-900'
+                    location.pathname === item.path
+                      ? 'text-navy-900'
+                      : 'text-navy-600 hover:text-navy-900'
                   }`}
                 >
                   {item.name}
@@ -69,7 +95,6 @@ export default function Navigation() {
             </div>
           </nav>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
@@ -111,6 +136,11 @@ export default function Navigation() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <motion.div
+        style={{ scaleX: progress }}
+        className="absolute bottom-0 left-0 right-0 h-0.5 origin-left bg-gradient-to-r from-navy-500 via-tan-400 to-navy-700"
+      />
     </motion.nav>
   );
 }
